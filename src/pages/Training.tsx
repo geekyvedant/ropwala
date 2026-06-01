@@ -6,6 +6,7 @@ import { useLanguage } from '../context/LanguageContext';
 import useEmblaCarousel from 'embla-carousel-react';
 import Autoplay from 'embla-carousel-autoplay';
 import { Link } from 'react-router-dom';
+import SEO from '../components/SEO';
 
 export default function Training() {
   const { t } = useLanguage();
@@ -31,6 +32,7 @@ export default function Training() {
 
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col">
+      <SEO title="Training Details - RopWala" description="Comprehensive curriculum covering everything from seed to sale." />
       <Navbar />
       
       <main className="flex-grow">

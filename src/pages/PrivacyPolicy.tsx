@@ -2,12 +2,14 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import ContactFAB from '../components/ContactFAB';
 import { useLanguage } from '../context/LanguageContext';
+import SEO from '../components/SEO';
 
 export default function PrivacyPolicy() {
   const { t } = useLanguage();
 
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col">
+      <SEO title="Privacy Policy - RopWala" description="Our privacy practices and information handling policies." />
       <Navbar />
       
       <main className="flex-grow">

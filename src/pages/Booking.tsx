@@ -4,6 +4,7 @@ import { useLanguage } from '../context/LanguageContext';
 import { salesTranslations } from '../i18n/salesTranslations';
 import Navbar from '../components/Navbar';
 import ContactFAB from '../components/ContactFAB';
+import SEO from '../components/SEO';
 
 export default function Booking() {
   const { language } = useLanguage();
@@ -48,9 +49,10 @@ export default function Booking() {
 
   return (
     <div className="min-h-screen bg-[#f8f9fa] font-sans text-gray-900 pb-24">
+      <SEO title="Book Your Seat - RopWala Training" description="Book your seat for the RopWala modern nursery training program." />
       <Navbar />
       {/* Top Banner */}
-      <div className="bg-black text-white text-center py-2 px-4 text-sm md:text-base font-medium mt-[80px]">
+      <div className="bg-black text-white text-center py-2 px-4 text-sm md:text-base font-medium">
         {t.topBanner}
       </div>
 

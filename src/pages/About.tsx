@@ -3,12 +3,14 @@ import Footer from '../components/Footer';
 import ContactFAB from '../components/ContactFAB';
 import { useLanguage } from '../context/LanguageContext';
 import { Target, Eye, Award } from 'lucide-react';
+import SEO from '../components/SEO';
 
 export default function About() {
   const { t } = useLanguage();
 
   return (
     <div className="min-h-screen bg-white flex flex-col">
+      <SEO title="About Us - RopWala" description="Learn about RopWala and our mission to build agri-entrepreneurs." />
       <Navbar />
       
       <main className="flex-grow">
@@ -61,6 +63,42 @@ export default function About() {
               </div>
               <h3 className="text-2xl font-bold text-gray-900 mb-4">{t('aboutPage.valuesTitle')}</h3>
               <p className="text-gray-600">{t('aboutPage.valuesDesc')}</p>
+            </div>
+          </div>
+
+          <div className="mt-24 mb-10 text-center">
+            <h2 className="text-3xl font-bold text-forest mb-12">{t('aboutPage.ourFounders')}</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-5xl mx-auto">
+              <div className="flex flex-col items-center">
+                <img 
+                  src="https://picsum.photos/seed/hanmant/400/400" 
+                  alt="Hanmant Dhole" 
+                  className="w-48 h-48 rounded-full shadow-lg object-cover mb-4 border-4 border-gray-100"
+                  referrerPolicy="no-referrer"
+                />
+                <h3 className="text-xl font-bold text-gray-900">Hanmant Dhole</h3>
+                <p className="text-forest font-medium">{t('aboutPage.founder')}</p>
+              </div>
+              <div className="flex flex-col items-center">
+                <img 
+                  src="https://picsum.photos/seed/santosh/400/400" 
+                  alt="Santosh Mane" 
+                  className="w-48 h-48 rounded-full shadow-lg object-cover mb-4 border-4 border-gray-100"
+                  referrerPolicy="no-referrer"
+                />
+                <h3 className="text-xl font-bold text-gray-900">Santosh Mane</h3>
+                <p className="text-forest font-medium">{t('aboutPage.founder')}</p>
+              </div>
+              <div className="flex flex-col items-center">
+                <img 
+                  src="https://picsum.photos/seed/rushikesh/400/400" 
+                  alt="Rushikesh Patil" 
+                  className="w-48 h-48 rounded-full shadow-lg object-cover mb-4 border-4 border-gray-100"
+                  referrerPolicy="no-referrer"
+                />
+                <h3 className="text-xl font-bold text-gray-900">Rushikesh Patil</h3>
+                <p className="text-forest font-medium">{t('aboutPage.founder')}</p>
+              </div>
             </div>
           </div>
         </div>

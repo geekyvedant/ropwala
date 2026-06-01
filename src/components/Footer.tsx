@@ -30,8 +30,8 @@ export default function Footer() {
               <li><Link to="/" className="text-gray-300 hover:text-white text-sm transition-colors">{t('nav.home')}</Link></li>
               <li><Link to="/training" className="text-gray-300 hover:text-white text-sm transition-colors">{t('nav.training')}</Link></li>
               <li><Link to="/about" className="text-gray-300 hover:text-white text-sm transition-colors">{t('nav.about')}</Link></li>
-              <li><Link to="/privacy-policy" className="text-gray-300 hover:text-white text-sm transition-colors">Privacy Policy</Link></li>
-              <li><a href="#" className="text-gray-300 hover:text-white text-sm transition-colors">Terms & Conditions</a></li>
+              <li><Link to="/privacy-policy" className="text-gray-300 hover:text-white text-sm transition-colors">{t('privacyPolicy.title')}</Link></li>
+              <li><Link to="/terms-conditions" className="text-gray-300 hover:text-white text-sm transition-colors">{t('nav.terms')}</Link></li>
             </ul>
           </div>
 

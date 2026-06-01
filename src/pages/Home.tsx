@@ -6,6 +6,7 @@ import ContactFAB from '../components/ContactFAB';
 import Carousel from '../components/Carousel';
 import { motion } from 'motion/react';
 import { useLanguage } from '../context/LanguageContext';
+import SEO from '../components/SEO';
 
 export default function Home() {
   const { t } = useLanguage();
@@ -19,6 +20,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-white flex flex-col">
+      <SEO />
       <Navbar />
       
       <main className="flex-grow">
@@ -42,9 +44,6 @@ export default function Home() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <span className="inline-block py-1 px-3 rounded-full bg-lime/20 text-lime border border-lime/30 text-sm font-semibold tracking-wider uppercase mb-6 backdrop-blur-sm">
-                {t('hero.badge')}
-              </span>
               <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-white mb-6 leading-tight drop-shadow-lg">
                 {t('hero.title1')} <br className="hidden md:block" />
                 <span className="text-marigold">{t('hero.title2')}</span>

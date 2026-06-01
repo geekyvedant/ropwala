@@ -4,6 +4,7 @@ import ContactFAB from '../components/ContactFAB';
 import { useLanguage } from '../context/LanguageContext';
 import useEmblaCarousel from 'embla-carousel-react';
 import { Play } from 'lucide-react';
+import SEO from '../components/SEO';
 
 export default function Reviews() {
   const { t } = useLanguage();
@@ -13,6 +14,7 @@ export default function Reviews() {
 
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col">
+      <SEO title="Student Reviews - RopWala" description="Hear success stories from our trained agri-entrepreneurs." />
       <Navbar />
       
       <main className="flex-grow">

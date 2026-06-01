@@ -15,7 +15,7 @@ export default function ContactFAB() {
             initial={{ opacity: 0, y: 20, scale: 0.8 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.8 }}
-            className="flex flex-col gap-3 mb-4"
+            className="flex flex-col items-end gap-3 mb-4"
           >
             <a 
               href={whatsappUrl} 
@@ -43,7 +43,7 @@ export default function ContactFAB() {
       
       <button 
         onClick={() => setIsOpen(!isOpen)}
-        className="bg-marigold text-white p-4 rounded-full shadow-xl hover:scale-110 transition-transform duration-300 flex items-center justify-center"
+        className="w-14 h-14 bg-marigold text-white rounded-full shadow-xl hover:scale-110 transition-transform duration-300 flex items-center justify-center"
         aria-label="Contact Options"
       >
         {isOpen ? <X size={28} /> : <MessageSquare size={28} />}

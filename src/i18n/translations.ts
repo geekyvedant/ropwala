@@ -1,6 +1,6 @@
 export const translations = {
   en: {
-    nav: { home: "Home", training: "Training Details", about: "About Us", reviews: "Reviews", call: "Call Now", book: "Book My Seat" },
+    nav: { home: "Home", training: "Training Details", about: "About Us", reviews: "Reviews", call: "Call Now", book: "Book My Seat", terms: "Terms & Conditions" },
     hero: { badge: "Ashta Training Center", title1: "Modern Nursery", title2: "Farming Training", desc: "Start your profitable modern nursery business with our expert guidance, practical training, and lifetime support.", viewBatch: "View Next Batch", download: "Download Brochure" },
     about: { title: "Why Choose RopWala?", desc: "We don't just teach farming; we build agri-entrepreneurs.", readMore: "Read More About Us" },
     training: { title: "Comprehensive Curriculum", desc: "Everything you need to know from seed to sale.", readMore: "View Full Curriculum" },
@@ -66,7 +66,9 @@ export const translations = {
       visionTitle: "Our Vision",
       visionDesc: "To be the leading agricultural training institute in India, known for practical, results-oriented education.",
       valuesTitle: "Our Values",
-      valuesDesc: "Integrity, Innovation, Farmer-First Approach, and Commitment to Excellence in everything we do."
+      valuesDesc: "Integrity, Innovation, Farmer-First Approach, and Commitment to Excellence in everything we do.",
+      ourFounders: "Our Founders",
+      founder: "Founder"
     },
     privacyPolicy: {
       title: "Privacy Policy",
@@ -87,7 +89,7 @@ export const translations = {
     }
   },
   mr: {
-    nav: { home: "होम", training: "प्रशिक्षणाची माहिती", about: "आमच्याबद्दल", reviews: "शेतकऱ्यांचे अनुभव", call: "कॉल करा", book: "सीट बुक करा" },
+    nav: { home: "होम", training: "प्रशिक्षणाची माहिती", about: "आमच्याबद्दल", reviews: "शेतकऱ्यांचे अनुभव", call: "कॉल करा", book: "सीट बुक करा", terms: "अटी व शर्ती" },
     hero: { badge: "आष्टा ट्रेनिंग सेंटर", title1: "आधुनिक रोपवाटिका", title2: "प्रशिक्षण", desc: "आमच्या तज्ञांच्या मार्गदर्शनाखाली, प्रॅक्टिकल ट्रेनिंग आणि कायमस्वरूपी सपोर्टसह तुमचा स्वतःचा फायदेशीर रोपवाटिका व्यवसाय सुरू करा.", viewBatch: "पुढची बॅच पहा", download: "माहितीपत्रक डाउनलोड करा" },
     about: { title: "रोपवालाच का?", desc: "आम्ही फक्त शेती शिकवत नाही; आम्ही शेतकरी उद्योजक घडवतो.", readMore: "आमच्याबद्दल अधिक वाचा" },
     training: { title: "संपूर्ण अभ्यासक्रम", desc: "बियाण्यापासून ते रोप विकण्यापर्यंत सगळी माहिती.", readMore: "संपूर्ण अभ्यासक्रम पहा" },
@@ -153,10 +155,12 @@ export const translations = {
       visionTitle: "आमचा दृष्टिकोन",
       visionDesc: "प्रॅक्टिकल आणि रिझल्ट देणाऱ्या शिक्षणासाठी ओळखली जाणारी भारतातील आघाडीची कृषी प्रशिक्षण संस्था बनणे.",
       valuesTitle: "आमची मूल्ये",
-      valuesDesc: "प्रामाणिकपणा, नाविन्य, शेतकरी-प्रथम दृष्टिकोन आणि आम्ही करत असलेल्या प्रत्येक गोष्टीत उत्कृष्टतेची बांधिलकी."
+      valuesDesc: "प्रामाणिकपणा, नाविन्य, शेतकरी-प्रथम दृष्टिकोन आणि आम्ही करत असलेल्या प्रत्येक गोष्टीत उत्कृष्टतेची बांधिलकी.",
+      ourFounders: "आमचे संस्थापक",
+      founder: "संस्थापक"
     },
     privacyPolicy: {
-      title: "गोपनीयता धोरण (Privacy Policy)",
+      title: "गोपनीयता धोरण",
       lastUpdated: "शेवटचे अपडेट",
       introTitle: "१. प्रस्तावना",
       introText: "रोपवाला ॲग्री प्रा. लि. मध्ये आपले स्वागत आहे. जेव्हा तुम्ही आमच्या वेबसाइटला भेट देता किंवा आमच्या सेवा वापरता तेव्हा आम्ही तुमची माहिती कशी गोळा करतो, वापरतो आणि सुरक्षित ठेवतो हे या गोपनीयता धोरणात स्पष्ट केले आहे.",
@@ -174,7 +178,7 @@ export const translations = {
     }
   },
   hi: {
-    nav: { home: "होम", training: "प्रशिक्षण विवरण", about: "हमारे बारे में", reviews: "समीक्षाएं", call: "कॉल करें", book: "सीट बुक करें" },
+    nav: { home: "होम", training: "प्रशिक्षण विवरण", about: "हमारे बारे में", reviews: "समीक्षाएं", call: "कॉल करें", book: "सीट बुक करें", terms: "नियम एवं शर्तें" },
     hero: { badge: "आष्टा प्रशिक्षण केंद्र", title1: "आधुनिक नर्सरी", title2: "खेती प्रशिक्षण", desc: "हमारे विशेषज्ञ मार्गदर्शन, व्यावहारिक प्रशिक्षण और आजीवन समर्थन के साथ अपना लाभदायक आधुनिक नर्सरी व्यवसाय शुरू करें।", viewBatch: "अगला बैच देखें", download: "ब्रोशर डाउनलोड करें" },
     about: { title: "रोपवाला क्यों चुनें?", desc: "हम सिर्फ खेती नहीं सिखाते; हम कृषि-उद्यमी बनाते हैं।", readMore: "हमारे बारे में और पढ़ें" },
     training: { title: "व्यापक पाठ्यक्रम", desc: "बीज से बिक्री तक आपको जो कुछ भी जानने की आवश्यकता है।", readMore: "पूरा पाठ्यक्रम देखें" },
@@ -240,10 +244,12 @@ export const translations = {
       visionTitle: "हमारा दृष्टिकोण",
       visionDesc: "व्यावहारिक, परिणाम-उन्मुख शिक्षा के लिए जाने जाने वाले भारत में अग्रणी कृषि प्रशिक्षण संस्थान बनना।",
       valuesTitle: "हमारे मूल्य",
-      valuesDesc: "ईमानदारी, नवाचार, किसान-प्रथम दृष्टिकोण, और हम जो कुछ भी करते हैं उसमें उत्कृष्टता के प्रति प्रतिबद्धता।"
+      valuesDesc: "ईमानदारी, नवाचार, किसान-प्रथम दृष्टिकोण, और हम जो कुछ भी करते हैं उसमें उत्कृष्टता के प्रति प्रतिबद्धता।",
+      ourFounders: "हमारे संस्थापक",
+      founder: "संस्थापक"
     },
     privacyPolicy: {
-      title: "गोपनीयता नीति (Privacy Policy)",
+      title: "गोपनीयता नीति",
       lastUpdated: "अंतिम अपडेट",
       introTitle: "1. परिचय",
       introText: "रोपवाला एग्री प्राइवेट लिमिटेड में आपका स्वागत है। यह गोपनीयता नीति बताती है कि जब आप हमारी वेबसाइट पर जाते हैं या हमारी सेवाओं का उपयोग करते हैं तो हम आपकी जानकारी कैसे एकत्र, उपयोग और सुरक्षित करते हैं।",
@@ -261,7 +267,7 @@ export const translations = {
     }
   },
   kn: {
-    nav: { home: "ಮುಖಪುಟ", training: "ತರಬೇತಿ ವಿವರಗಳು", about: "ನಮ್ಮ ಬಗ್ಗೆ", reviews: "ವಿಮರ್ಶೆಗಳು", call: "ಕರೆ ಮಾಡಿ", book: "ಸೀಟ್ ಬುಕ್ ಮಾಡಿ" },
+    nav: { home: "ಮುಖಪುಟ", training: "ತರಬೇತಿ ವಿವರಗಳು", about: "ನಮ್ಮ ಬಗ್ಗೆ", reviews: "ವಿಮರ್ಶೆಗಳು", call: "ಕರೆ ಮಾಡಿ", book: "ಸೀಟ್ ಬುಕ್ ಮಾಡಿ", terms: "ನಿಯಮಗಳು ಮತ್ತು ಷರತ್ತುಗಳು" },
     hero: { badge: "ಅಷ್ಟಾ ತರಬೇತಿ ಕೇಂದ್ರ", title1: "ಆಧುನಿಕ ನರ್ಸರಿ", title2: "ಕೃಷಿ ತರಬೇತಿ", desc: "ನಮ್ಮ ತಜ್ಞರ ಮಾರ್ಗದರ್ಶನ, ಪ್ರಾಯೋಗಿಕ ತರಬೇತಿ ಮತ್ತು ಜೀವಮಾನದ ಬೆಂಬಲದೊಂದಿಗೆ ನಿಮ್ಮ ಲಾಭದಾಯಕ ಆಧುನಿಕ ನರ್ಸರಿ ವ್ಯವಹಾರವನ್ನು ಪ್ರಾರಂಭಿಸಿ.", viewBatch: "ಮುಂದಿನ ಬ್ಯಾಚ್ ವೀಕ್ಷಿಸಿ", download: "ಕರಪತ್ರ ಡೌನ್‌ಲೋಡ್ ಮಾಡಿ" },
     about: { title: "ರೋಪ್‌ವಾಲಾ ಏಕೆ ಆರಿಸಬೇಕು?", desc: "ನಾವು ಕೇವಲ ಕೃಷಿಯನ್ನು ಕಲಿಸುವುದಿಲ್ಲ; ನಾವು ಕೃಷಿ ಉದ್ಯಮಿಗಳನ್ನು ನಿರ್ಮಿಸುತ್ತೇವೆ.", readMore: "ನಮ್ಮ ಬಗ್ಗೆ ಇನ್ನಷ್ಟು ಓದಿ" },
     training: { title: "ಸಮಗ್ರ ಪಠ್ಯಕ್ರಮ", desc: "ಬೀಜದಿಂದ ಮಾರಾಟದವರೆಗೆ ನೀವು ತಿಳಿದುಕೊಳ್ಳಬೇಕಾದ ಎಲ್ಲವೂ.", readMore: "ಪೂರ್ಣ ಪಠ್ಯಕ್ರಮವನ್ನು ವೀಕ್ಷಿಸಿ" },
@@ -327,10 +333,12 @@ export const translations = {
       visionTitle: "ನಮ್ಮ ದೃಷ್ಟಿ",
       visionDesc: "ಪ್ರಾಯೋಗಿಕ, ಫಲಿತಾಂಶ-ಆಧಾರಿತ ಶಿಕ್ಷಣಕ್ಕೆ ಹೆಸರುವಾಸಿಯಾದ ಭಾರತದ ಪ್ರಮುಖ ಕೃಷಿ ತರಬೇತಿ ಸಂಸ್ಥೆಯಾಗುವುದು.",
       valuesTitle: "ನಮ್ಮ ಮೌಲ್ಯಗಳು",
-      valuesDesc: "ಸಮಗ್ರತೆ, ನಾವೀನ್ಯತೆ, ರೈತ-ಮೊದಲ ವಿಧಾನ ಮತ್ತು ನಾವು ಮಾಡುವ ಎಲ್ಲದರಲ್ಲೂ ಶ್ರೇಷ್ಠತೆಯ ಬದ್ಧತೆ."
+      valuesDesc: "ಸಮಗ್ರತೆ, ನಾವೀನ್ಯತೆ, ರೈತ-ಮೊದಲ ವಿಧಾನ ಮತ್ತು ನಾವು ಮಾಡುವ ಎಲ್ಲದರಲ್ಲೂ ಶ್ರೇಷ್ಠತೆಯ ಬದ್ಧತೆ.",
+      ourFounders: "ನಮ್ಮ ಸ್ಥಾಪಕರು",
+      founder: "ಸ್ಥಾಪಕ"
     },
     privacyPolicy: {
-      title: "ಗೌಪ್ಯತೆ ನೀತಿ (Privacy Policy)",
+      title: "ಗೌಪ್ಯತೆ ನೀತಿ",
       lastUpdated: "ಕೊನೆಯದಾಗಿ ನವೀಕರಿಸಲಾಗಿದೆ",
       introTitle: "1. ಪರಿಚಯ",
       introText: "ರೋಪ್‌ವಾಲಾ ಅಗ್ರಿ ಪ್ರೈವೇಟ್ ಲಿಮಿಟೆಡ್‌ಗೆ ಸುಸ್ವಾಗತ. ನೀವು ನಮ್ಮ ವೆಬ್‌ಸೈಟ್‌ಗೆ ಭೇಟಿ ನೀಡಿದಾಗ ಅಥವಾ ನಮ್ಮ ಸೇವೆಗಳನ್ನು ಬಳಸಿದಾಗ ನಾವು ನಿಮ್ಮ ಮಾಹಿತಿಯನ್ನು ಹೇಗೆ ಸಂಗ್ರಹಿಸುತ್ತೇವೆ, ಬಳಸುತ್ತೇವೆ ಮತ್ತು ರಕ್ಷಿಸುತ್ತೇವೆ ಎಂಬುದನ್ನು ಈ ಗೌಪ್ಯತೆ ನೀತಿ ವಿವರಿಸುತ್ತದೆ.",
