@@ -16,7 +16,7 @@ export default function PrivacyPolicy() {
         <div className="bg-forest text-white py-16">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h1 className="text-4xl md:text-5xl font-extrabold mb-4">{t('privacyPolicy.title')}</h1>
-            <p className="text-gray-300">{t('privacyPolicy.lastUpdated')}: {new Date().toLocaleDateString()}</p>
+            {/* <p className="text-gray-300">{t('privacyPolicy.lastUpdated')}: {new Date().toLocaleDateString()}</p> */}
           </div>
         </div>
 

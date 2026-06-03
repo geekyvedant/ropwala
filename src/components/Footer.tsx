@@ -2,6 +2,9 @@ import { MapPin, Phone, Mail } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 import { Link } from 'react-router-dom';
 
+import logoImg from '../assets/logo.png';
+
+
 export default function Footer() {
   const { t } = useLanguage();
 
@@ -15,7 +18,7 @@ export default function Footer() {
           {/* Company Info */}
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <img src="https://astroraajpatil.in/music/logo.svg" alt="RopWala Logo" className="h-8" />
+              <img src={logoImg} alt="RopWala Logo" className="h-10 w-auto object-contain" />
               <span className="font-bold text-xl tracking-tight">RopWala Agri Pvt. Ltd.</span>
             </div>
             <p className="text-gray-300 text-sm mb-4 leading-relaxed">

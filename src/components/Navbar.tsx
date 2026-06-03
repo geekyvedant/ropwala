@@ -2,6 +2,8 @@ import { Menu, Phone, Globe } from 'lucide-react';
 import { useState, ChangeEvent } from 'react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext';
+// Imported the local logo from the assets directory
+import logoImg from '../assets/logo.png';
 
 export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -18,7 +20,7 @@ export default function Navbar() {
           {/* Left: Logo */}
           <div className="flex-shrink-0 flex items-center">
             <Link to="/" className="flex items-center gap-2">
-              <img src="https://astroraajpatil.in/music/logo.svg" alt="RopWala Logo" className="h-10" />
+              <img src={logoImg} alt="RopWala Logo" className="h-10 w-auto object-contain" />
               <span className="font-bold text-2xl text-forest tracking-tight">RopWala</span>
             </Link>
           </div>
