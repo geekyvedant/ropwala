@@ -4,9 +4,11 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 interface CarouselProps {
   items: { type: 'image' | 'video'; src: string; alt?: string }[];
+  // Added a custom className prop with a default fallback
+  className?: string; 
 }
 
-export default function Carousel({ items }: CarouselProps) {
+export default function Carousel({ items, className = "relative w-full h-[400px] md:h-[500px] overflow-hidden rounded-3xl shadow-xl group" }: CarouselProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const nextSlide = () => {
@@ -25,7 +27,8 @@ export default function Carousel({ items }: CarouselProps) {
   }, [currentIndex]);
 
   return (
-    <div className="relative w-full h-[400px] md:h-[500px] overflow-hidden rounded-3xl shadow-xl group">
+    // Changed hardcoded classes to use the dynamic `className` prop
+    <div className={className}>
       <AnimatePresence initial={false} mode="wait">
         <motion.div
           key={currentIndex}

@@ -8,14 +8,50 @@ import Autoplay from 'embla-carousel-autoplay';
 import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
 
+// 2. Import Gallery / Sessions Images
+import session1 from '../assets/sessions/session1.jpg';
+import session2 from '../assets/sessions/session2.jpg';
+import session3 from '../assets/sessions/session3.jpg';
+import session4 from '../assets/sessions/session4.jpeg';
+import session5 from '../assets/sessions/session5.jpeg';
+import session6 from '../assets/sessions/session6.jpeg';
+import session7 from '../assets/sessions/session7.jpeg';
+import session8 from '../assets/sessions/session8.jpeg';
+import session9 from '../assets/sessions/session9.jpeg';
+import session10 from '../assets/sessions/session10.jpeg';
+import session11 from '../assets/sessions/session11.jpeg';
+import session12 from '../assets/sessions/session12.jpeg';
+import session13 from '../assets/sessions/session13.jpeg';
+import session14 from '../assets/sessions/session14.jpeg';
+import session15 from '../assets/sessions/session15.jpeg';
+import session16 from '../assets/sessions/session16.jpeg';
+import session17 from '../assets/sessions/session17.jpeg';
+import session18 from '../assets/sessions/session18.jpeg';
+
 export default function Training() {
   const { t } = useLanguage();
   const [emblaRef] = useEmblaCarousel({ loop: true }, [Autoplay()]);
 
-  const images = [
-    "https://picsum.photos/seed/nursery1/800/600",
-    "https://picsum.photos/seed/nursery2/800/600",
-    "https://picsum.photos/seed/nursery3/800/600",
+  const carouselItems = [
+    { type: 'image' as const, src: session1, alt: 'Nursery View 1' },
+    { type: 'image' as const, src: session2, alt: 'Nursery View 2' },
+    { type: 'image' as const, src: session3, alt: 'Nursery View 3' },
+    { type: 'image' as const, src: session4, alt: 'Nursery View 4' },
+    { type: 'image' as const, src: session5, alt: 'Nursery View 5' },
+    { type: 'image' as const, src: session6, alt: 'Nursery View 6' },
+    { type: 'image' as const, src: session7, alt: 'Nursery View 7' },
+    { type: 'image' as const, src: session8, alt: 'Nursery View 8' },
+    { type: 'image' as const, src: session9, alt: 'Nursery View 9' },
+    { type: 'image' as const, src: session10, alt: 'Nursery View 10' },
+    { type: 'image' as const, src: session11, alt: 'Nursery View 11' },
+    { type: 'image' as const, src: session12, alt: 'Nursery View 12' },
+    { type: 'image' as const, src: session13, alt: 'Nursery View 13' },
+    { type: 'image' as const, src: session14, alt: 'Nursery View 14' },
+    { type: 'image' as const, src: session15, alt: 'Nursery View 15' },
+    { type: 'image' as const, src: session16, alt: 'Nursery View 16' },
+    { type: 'image' as const, src: session17, alt: 'Nursery View 17' },
+    { type: 'image' as const, src: session18, alt: 'Nursery View 18' },
+
   ];
 
   const curriculumIcons = [Grid, Sprout, Droplets, Sun, Shield, Users];
@@ -34,7 +70,7 @@ export default function Training() {
     <div className="min-h-screen bg-gray-50 flex flex-col">
       <SEO title="Training Details - RopWala" description="Comprehensive curriculum covering everything from seed to sale." />
       <Navbar />
-      
+
       <main className="flex-grow">
         <div className="bg-forest text-white py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -49,9 +85,15 @@ export default function Training() {
             <h2 className="text-3xl font-bold text-forest mb-8 text-center">{t('trainingPage.title')}</h2>
             <div className="overflow-hidden rounded-3xl shadow-xl" ref={emblaRef}>
               <div className="flex">
-                {images.map((src, index) => (
+                {/* Destructured src and alt from the new item object structure */}
+                {carouselItems.map(({ src, alt }, index) => (
                   <div className="flex-[0_0_100%] min-w-0 relative h-[400px] md:h-[600px]" key={index}>
-                    <img src={src} alt={`Training Facility ${index + 1}`} className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+                    <img
+                      src={src}
+                      alt={alt}
+                      className="w-full h-full object-cover"
+                      referrerPolicy="no-referrer"
+                    />
                   </div>
                 ))}
               </div>

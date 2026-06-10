@@ -5,6 +5,9 @@ import { useLanguage } from '../context/LanguageContext';
 import { Target, Eye, Award } from 'lucide-react';
 import SEO from '../components/SEO';
 
+import logoImg from '../assets/logo.png';
+
+
 export default function About() {
   const { t } = useLanguage();
 
@@ -12,7 +15,7 @@ export default function About() {
     <div className="min-h-screen bg-white flex flex-col">
       <SEO title="About Us - RopWala" description="Learn about RopWala and our mission to build agri-entrepreneurs." />
       <Navbar />
-      
+
       <main className="flex-grow">
         <div className="bg-forest text-white py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -22,13 +25,12 @@ export default function About() {
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-20">
-            <div>
-              <img 
-                src="https://picsum.photos/seed/farmer/800/800" 
-                alt="RopWala Founder" 
-                className="rounded-3xl shadow-2xl w-full object-cover aspect-square"
-                referrerPolicy="no-referrer"
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center justify-center mb-20">
+            <div className="flex flex-col items-center justify-center w-full">
+              <img
+                src={logoImg}
+                alt="RopWala Logo"
+                className="h-70 w-auto object-contain mx-auto"
               />
             </div>
             <div className="space-y-6">
@@ -70,9 +72,9 @@ export default function About() {
             <h2 className="text-3xl font-bold text-forest mb-12">{t('aboutPage.ourFounders')}</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-5xl mx-auto">
               <div className="flex flex-col items-center">
-                <img 
-                  src="https://picsum.photos/seed/hanmant/400/400" 
-                  alt="Hanmant Dhole" 
+                <img
+                  src="https://picsum.photos/seed/hanmant/400/400"
+                  alt="Hanmant Dhole"
                   className="w-48 h-48 rounded-full shadow-lg object-cover mb-4 border-4 border-gray-100"
                   referrerPolicy="no-referrer"
                 />
@@ -80,9 +82,9 @@ export default function About() {
                 <p className="text-forest font-medium">{t('aboutPage.founder')}</p>
               </div>
               <div className="flex flex-col items-center">
-                <img 
-                  src="https://picsum.photos/seed/santosh/400/400" 
-                  alt="Santosh Mane" 
+                <img
+                  src="https://picsum.photos/seed/santosh/400/400"
+                  alt="Santosh Mane"
                   className="w-48 h-48 rounded-full shadow-lg object-cover mb-4 border-4 border-gray-100"
                   referrerPolicy="no-referrer"
                 />
@@ -90,9 +92,9 @@ export default function About() {
                 <p className="text-forest font-medium">{t('aboutPage.founder')}</p>
               </div>
               <div className="flex flex-col items-center">
-                <img 
-                  src="https://picsum.photos/seed/rushikesh/400/400" 
-                  alt="Rushikesh Patil" 
+                <img
+                  src="https://picsum.photos/seed/rushikesh/400/400"
+                  alt="Rushikesh Patil"
                   className="w-48 h-48 rounded-full shadow-lg object-cover mb-4 border-4 border-gray-100"
                   referrerPolicy="no-referrer"
                 />

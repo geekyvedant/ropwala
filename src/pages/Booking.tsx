@@ -1,31 +1,88 @@
+// src/pages/Booking.tsx
+
 import { useState, useEffect } from 'react';
-import { Play, Check, ChevronDown, ChevronUp } from 'lucide-react';
+import { ChevronDown, ChevronUp, Clock, Check } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 import { salesTranslations } from '../i18n/salesTranslations';
+import { TRAINING_CONFIG } from '../config/trainingConfig';
 import Navbar from '../components/Navbar';
 import ContactFAB from '../components/ContactFAB';
+import Carousel from '../components/Carousel';
 import SEO from '../components/SEO';
+
+import logoImg from '../assets/logo.png';
+
+// Past Training Gallery Assets
+import session1 from '../assets/sessions/session1.jpg';
+import session2 from '../assets/sessions/session2.jpg';
+import session3 from '../assets/sessions/session3.jpg';
+import session4 from '../assets/sessions/session4.jpeg';
+import session5 from '../assets/sessions/session5.jpeg';
+import session6 from '../assets/sessions/session6.jpeg';
+import session7 from '../assets/sessions/session7.jpeg';
+import session8 from '../assets/sessions/session8.jpeg';
+import session9 from '../assets/sessions/session9.jpeg';
+import session10 from '../assets/sessions/session10.jpeg';
+import session11 from '../assets/sessions/session11.jpeg';
+import session12 from '../assets/sessions/session12.jpeg';
+import session13 from '../assets/sessions/session13.jpeg';
+import session14 from '../assets/sessions/session14.jpeg';
+import session15 from '../assets/sessions/session15.jpeg';
+import session16 from '../assets/sessions/session16.jpeg';
+import session17 from '../assets/sessions/session17.jpeg';
+import session18 from '../assets/sessions/session18.jpeg';
+
+// Import the 5 Local Bonus Assets from the bookings folder
+import bonusImg1 from '../assets/bookings/bonus1.png';
+import bonusImg2 from '../assets/bookings/bonus2.png';
+import bonusImg3 from '../assets/bookings/bonus3.png';
+import bonusImg4 from '../assets/bookings/bonus4.png';
+import bonusImg5 from '../assets/bookings/bonus5.png';
 
 export default function Booking() {
   const { language } = useLanguage();
-  const t = salesTranslations[language] || salesTranslations.en;
-  
-  const [timeLeft, setTimeLeft] = useState({
-    days: 0,
-    hours: 0,
-    minutes: 0,
-    seconds: 0
-  });
-
+  const rawTranslations = salesTranslations[language] || salesTranslations.en;
   const [openFaq, setOpenFaq] = useState<number | null>(null);
+  const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+
+  // Format Helper Constants derived directly from config settings
+  const formattedFee = `${TRAINING_CONFIG.currencySymbol}${TRAINING_CONFIG.discountedFee}`;
+  const formattedBaseFee = `${TRAINING_CONFIG.currencySymbol}${TRAINING_CONFIG.baseFee}`;
+
+  const formattedDate = TRAINING_CONFIG.trainingDate.toLocaleDateString(
+    language === 'mr' ? 'mr-IN' : 'en-US', { day: 'numeric', month: 'long', year: 'numeric' }
+  );
+  const formattedTime = TRAINING_CONFIG.trainingDate.toLocaleTimeString(
+    language === 'mr' ? 'mr-IN' : 'en-US', { hour: 'numeric', minute: '2-digit' }
+  );
+
+  const deadlineDate = TRAINING_CONFIG.registrationDeadline.toLocaleDateString(
+    language === 'mr' ? 'mr-IN' : 'en-US', { day: 'numeric', month: 'long', year: 'numeric' }
+  );
+  const deadlineTime = TRAINING_CONFIG.registrationDeadline.toLocaleTimeString(
+    language === 'mr' ? 'mr-IN' : 'en-US', { hour: 'numeric', minute: '2-digit' }
+  );
+
+  // WhatsApp redirection setup
+  const message = encodeURIComponent("I want to book a seat for upcoming training session.");
+  const whatsappUrl = `https://wa.me/919130811266?text=${message}`;
+
+  // Dynamic template substitution helper
+  const renderText = (str: string) => {
+    if (!str) return '';
+    return str
+      .replace(/{{date}}/g, formattedDate)
+      .replace(/{{time}}/g, formattedTime)
+      .replace(/{{deadlineDate}}/g, deadlineDate)
+      .replace(/{{deadlineTime}}/g, deadlineTime)
+      .replace(/{{baseFee}}/g, formattedBaseFee)
+      .replace(/{{discountedFee}}/g, formattedFee);
+  };
 
   useEffect(() => {
-    const targetDate = new Date('2025-04-15T21:00:00').getTime();
-
+    const targetTime = TRAINING_CONFIG.registrationDeadline.getTime();
     const interval = setInterval(() => {
-      const now = new Date().getTime();
-      const difference = targetDate - now;
-
+      const difference = targetTime - new Date().getTime();
       if (difference > 0) {
         setTimeLeft({
           days: Math.floor(difference / (1000 * 60 * 60 * 24)),
@@ -38,161 +95,171 @@ export default function Booking() {
         clearInterval(interval);
       }
     }, 1000);
-
     return () => clearInterval(interval);
   }, []);
 
   const handleCtaClick = () => {
-    // Scroll to bottom or open payment modal
-    window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+    window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
   };
 
+  const carouselItems = [
+    { type: 'image' as const, src: session1, alt: 'View 1' }, { type: 'image' as const, src: session2, alt: 'View 2' },
+    { type: 'image' as const, src: session3, alt: 'View 3' }, { type: 'image' as const, src: session4, alt: 'View 4' },
+    { type: 'image' as const, src: session5, alt: 'View 5' }, { type: 'image' as const, src: session6, alt: 'View 6' },
+    { type: 'image' as const, src: session7, alt: 'View 7' }, { type: 'image' as const, src: session8, alt: 'View 8' },
+    { type: 'image' as const, src: session9, alt: 'View 9' }, { type: 'image' as const, src: session10, alt: 'View 10' },
+    { type: 'image' as const, src: session11, alt: 'View 11' }, { type: 'image' as const, src: session12, alt: 'View 12' },
+    { type: 'image' as const, src: session13, alt: 'View 13' }, { type: 'image' as const, src: session14, alt: 'View 14' },
+    { type: 'image' as const, src: session15, alt: 'View 15' }, { type: 'image' as const, src: session16, alt: 'View 16' },
+    { type: 'image' as const, src: session17, alt: 'View 17' }, { type: 'image' as const, src: session18, alt: 'View 18' }
+  ];
+
+  const localBonusImages = [bonusImg1, bonusImg2, bonusImg3, bonusImg4, bonusImg5];
+
+
   return (
-    <div className="min-h-screen bg-[#f8f9fa] font-sans text-gray-900 pb-24">
+    <div className="min-h-screen bg-gray-50 font-sans text-gray-900 pb-24">
       <SEO title="Book Your Seat - RopWala Training" description="Book your seat for the RopWala modern nursery training program." />
       <Navbar />
-      {/* Top Banner */}
-      <div className="bg-black text-white text-center py-2 px-4 text-sm md:text-base font-medium">
-        {t.topBanner}
+
+      <div className="bg-red-600 text-white text-center py-2 px-4 text-sm md:text-base font-bold shadow-sm z-20 relative">
+        ⚠️ {renderText(rawTranslations.topBanner)}
       </div>
 
-      {/* Hero Section */}
-      <div className="bg-[#1a1025] text-white pt-10 pb-16 px-4 text-center">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-red-500 font-bold text-xl md:text-2xl mb-2">{t.headlineLive}</h2>
-          <h1 className="text-3xl md:text-5xl font-extrabold leading-tight mb-4 text-yellow-400">
-            {t.headlineMain}
-          </h1>
-          <p className="text-lg md:text-xl text-gray-300 mb-8">
-            {t.headlineSub}
-          </p>
-          
-          <div className="inline-block border-2 border-yellow-400 text-yellow-400 font-bold py-2 px-6 rounded-md mb-8 text-lg md:text-xl">
-            {t.bootcampDate}
+      {/* Hero Header Area */}
+      <div className="relative z-10 bg-forest text-white pt-10 pb-16 px-4 text-center border-b border-darkmint overflow-hidden">
+        <div className="max-w-4xl mx-auto relative z-20">
+          <h2 className="text-marigold font-black text-xl md:text-2xl mb-2 tracking-wide">{renderText(rawTranslations.headlineLive)}</h2>
+          <h1 className="text-3xl md:text-5xl font-extrabold leading-tight mb-4 text-yellow">{renderText(rawTranslations.headlineMain)}</h1>
+          <p className="text-lg md:text-xl text-gray-200 mb-8 max-w-2xl mx-auto font-medium">{renderText(rawTranslations.headlineSub)}</p>
+
+          <div className="inline-block border-2 border-marigold text-marigold font-black py-2.5 px-6 rounded-full mb-8 text-lg md:text-xl bg-darkmint/30 backdrop-blur-sm">
+            {renderText(rawTranslations.bootcampDate)}
           </div>
 
-          <p className="font-bold text-lg mb-4">{t.watchVideo}</p>
+          <p className="font-bold text-lg mb-4 text-gray-100 flex items-center justify-center gap-2">{renderText(rawTranslations.watchVideo)}</p>
 
-          {/* Main Video Placeholder */}
-          <div className="relative max-w-3xl mx-auto aspect-video bg-gray-800 border-4 border-white rounded-lg overflow-hidden mb-8 shadow-2xl">
-            <img src="https://picsum.photos/seed/mainvideo/1280/720" alt="Main Video" className="w-full h-full object-cover opacity-80" referrerPolicy="no-referrer" />
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="w-16 h-16 bg-white/30 backdrop-blur-sm rounded-full flex items-center justify-center cursor-pointer hover:bg-white/50 transition-colors">
-                <Play className="text-white ml-1" size={32} fill="currentColor" />
-              </div>
-            </div>
+          <div className="relative max-w-3xl mx-auto aspect-video bg-black border-4 border-white/10 rounded-2xl overflow-hidden mb-8 shadow-2xl z-30">
+            <iframe src="https://www.youtube.com/embed/sZrOnWJHvX0?rel=0&modestbranding=1" title="Hero Overview Video" className="absolute inset-0 w-full h-full border-0" allowFullScreen />
           </div>
 
-          <button onClick={handleCtaClick} className="w-full max-w-2xl mx-auto bg-red-600 hover:bg-red-700 text-white font-bold text-xl md:text-2xl py-4 px-8 rounded-md shadow-lg transition-transform hover:scale-105 flex flex-col items-center justify-center">
-            <span>{t.cta1Sub}</span>
-            <span className="text-sm font-normal mt-1">{t.onlyRs}</span>
+          <button onClick={handleCtaClick} className="w-full max-w-2xl mx-auto bg-marigold hover:bg-yellow text-forest font-black text-xl md:text-2xl py-4 px-8 rounded-xl shadow-lg transition-all transform hover:-translate-y-0.5 flex flex-col items-center justify-center relative z-30">
+            <span>{renderText(rawTranslations.cta1Sub)}</span>
+            <span className="text-sm font-bold opacity-90 mt-1">{formattedFee}/-</span>
           </button>
         </div>
       </div>
 
-      {/* Real Stories Section */}
-      <div className="bg-white py-16 px-4 text-center">
+      {/* Real Success Video Stories Section */}
+      <div className="bg-white py-16 px-4 text-center relative z-20">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold mb-2">{t.realStoriesTitle}</h2>
-          <p className="text-gray-600 mb-10">{t.realStoriesSub}</p>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {[1, 2].map((i) => (
-              <div key={i} className="relative aspect-video bg-black rounded-lg overflow-hidden border-4 border-gray-200 shadow-lg">
-                <div className="absolute top-0 left-0 right-0 bg-yellow-400 text-black font-bold text-xs py-1 z-10">SUCCESS STORY</div>
-                <img src={`https://picsum.photos/seed/story${i}/800/450`} alt={`Story ${i}`} className="w-full h-full object-cover opacity-70" referrerPolicy="no-referrer" />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center cursor-pointer">
-                    <Play className="text-black ml-1" size={24} fill="currentColor" />
-                  </div>
-                </div>
+          <h2 className="text-3xl md:text-4xl font-extrabold text-forest mb-2">{renderText(rawTranslations.realStoriesTitle)}</h2>
+          <p className="text-gray-600 mb-10 font-medium">{renderText(rawTranslations.realStoriesSub)}</p>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 justify-items-center">
+            {['https://www.youtube.com/embed/x2bIkVNz5fc', 'https://www.youtube.com/embed/zy1BrdbXL04'].map((videoUrl, index) => (
+              <div key={index} className="w-full max-w-[460px] relative aspect-[9/16] bg-black rounded-3xl overflow-hidden border border-gray-100 shadow-xl">
+                <div className="absolute top-0 left-0 right-0 bg-marigold text-forest font-black text-xs py-1.5 z-10 tracking-widest">SUCCESS STORY</div>
+                <iframe src={`${videoUrl}?rel=0&modestbranding=1`} title={`Story ${index + 1}`} className="absolute inset-0 w-full h-full pt-6" allowFullScreen />
               </div>
             ))}
           </div>
         </div>
       </div>
 
-      {/* What You Will Learn Section */}
-      <div className="bg-[#1a1025] text-white py-16 px-4 text-center">
+      {/* Curriculum Informational Map Block */}
+      <div className="bg-forest text-white py-16 px-4 text-center border-t border-b border-darkmint relative z-20">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold mb-10">{t.whatYouLearnTitle}</h2>
-          
+          <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-10">{renderText(rawTranslations.whatYouLearnTitle)}</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-12">
-            {t.learnBoxes.map((box: string, i: number) => (
-              <div key={i} className="border border-gray-600 rounded-md p-6 flex items-center justify-center min-h-[100px] hover:border-yellow-400 transition-colors">
-                <p className="text-lg">{box}</p>
+            {rawTranslations.learnBoxes.map((box: string, i: number) => (
+              <div key={i} className="border border-white/20 bg-darkmint/30 rounded-2xl p-6 flex items-center justify-center min-h-[100px] hover:border-marigold transition-all duration-300">
+                <p className="text-lg font-medium text-gray-100">{renderText(box)}</p>
               </div>
             ))}
           </div>
-
-          <p className="text-xl mb-2">{t.workshopDate}</p>
-          <p className="text-yellow-400 font-bold text-xl">{t.beQuick}</p>
+          <p className="text-xl mb-2 font-semibold text-gray-200">{renderText(rawTranslations.workshopDate)}</p>
+          <p className="text-marigold font-black text-xl tracking-wide">{renderText(rawTranslations.beQuick)}</p>
         </div>
       </div>
 
-      {/* Checkboxes Section */}
-      <div className="bg-[#f0f4f8] py-16 px-4">
+      {/* Checkboxes Area */}
+      <div className="bg-gray-100 py-16 px-4 relative z-20">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl md:text-3xl font-bold text-center mb-10">
-            {t.checkBoxesTitle.split('YES!')[0]}<span className="text-green-600">YES!</span>
+          <h2 className="text-2xl md:text-3xl font-extrabold text-forest text-center mb-10">
+            {rawTranslations.checkBoxesTitle.includes('YES!') ? (
+              <>
+                {rawTranslations.checkBoxesTitle.split('YES!')[0]}
+                <span className="text-marigold">YES!</span>
+                {rawTranslations.checkBoxesTitle.split('YES!')[1]}
+              </>
+            ) : renderText(rawTranslations.checkBoxesTitle)}
           </h2>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
-            {t.checkBoxes.map((box: string, i: number) => (
-              <div key={i} className="flex items-start gap-3 bg-white p-4 rounded-md shadow-sm">
-                <input type="checkbox" className="mt-1 w-5 h-5 text-green-600 rounded border-gray-300 focus:ring-green-500" />
-                <p className="text-gray-700 text-sm md:text-base">{box}</p>
+            {rawTranslations.checkBoxes.map((box: string, i: number) => (
+              <div key={i} className="flex items-start gap-3 bg-white p-5 rounded-2xl shadow-sm border border-gray-100">
+                <input type="checkbox" defaultChecked className="mt-1 w-5 h-5 text-forest rounded border-gray-300 focus:ring-forest" />
+                <p className="text-gray-700 font-medium text-sm md:text-base leading-relaxed">{renderText(box)}</p>
               </div>
             ))}
           </div>
 
-          <div className="text-center">
-            <p className="text-xl font-medium mb-4">{t.ifChecked}</p>
-            <p className="text-2xl font-bold mb-6">{t.joinBootcamp}</p>
-            <button onClick={handleCtaClick} className="w-full max-w-xl mx-auto bg-red-600 hover:bg-red-700 text-white font-bold text-xl py-4 px-8 rounded-md shadow-lg transition-transform hover:scale-105 flex flex-col items-center justify-center">
-              <span>{t.ctaButton}</span>
-              <span className="text-sm font-normal mt-1">{t.onlyRs}</span>
+          <div className="text-center space-y-4">
+            <p className="text-xl font-bold text-gray-800">{renderText(rawTranslations.ifChecked)}</p>
+            <p className="text-2xl font-black text-forest tracking-tight">{renderText(rawTranslations.joinBootcamp)}</p>
+            <button onClick={handleCtaClick} className="w-full max-w-xl mx-auto bg-marigold hover:bg-yellow text-forest font-black text-xl py-4 px-8 rounded-xl shadow-xl transition-all transform hover:-translate-y-0.5 flex flex-col items-center justify-center">
+              <span>{renderText(rawTranslations.ctaButton)}</span>
+              <span className="text-sm font-bold opacity-90 mt-1">{formattedFee}/-</span>
             </button>
-            <p className="mt-4 font-bold text-sm">
-              {t.registerBefore.split('₹')[0]}<span className="text-yellow-600">₹ {t.registerBefore.split('₹')[1]}</span>
-            </p>
+            <p className="font-extrabold text-sm text-gray-500">{renderText(rawTranslations.registerBefore)}</p>
           </div>
         </div>
       </div>
 
-      {/* Not Hard Section */}
-      <div className="bg-white py-16 px-4 text-center">
+      {/* Mirror Gallery and Containment Area */}
+      <div className="bg-white py-16 px-4 text-center relative z-20">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            {t.notHardTitle.split('कठीण काम नाही!')[0]}<span className="text-green-600">कठीण काम नाही!</span>
+          <h2 className="text-3xl md:text-4xl font-extrabold text-forest mb-6">
+            {rawTranslations.notHardTitle.includes('कठीण काम नाही!') ? (
+              <>
+                {rawTranslations.notHardTitle.split('कठीण काम नाही!')[0]}
+                <span className="text-marigold">कठीण काम नाही!</span>
+                {rawTranslations.notHardTitle.split('कठीण काम नाही!')[1]}
+              </>
+            ) : renderText(rawTranslations.notHardTitle)}
           </h2>
-          <p className="text-lg text-gray-700 mb-4">{t.notHardSub1}</p>
-          <p className="text-lg text-gray-700 mb-4">{t.notHardSub2}</p>
-          <p className="text-lg text-gray-700 mb-8">{t.notHardSub3}</p>
-          <p className="text-red-600 font-bold text-xl mb-10">{t.hours3}</p>
+          <p className="text-lg text-gray-600 mb-4 font-medium">{renderText(rawTranslations.notHardSub1)}</p>
+          <p className="text-lg text-gray-600 mb-4">{renderText(rawTranslations.notHardSub2)}</p>
+          <p className="text-lg text-gray-600 mb-8">{renderText(rawTranslations.notHardSub3)}</p>
+          <p className="text-forest font-black text-xl md:text-2xl tracking-wide mb-10">{renderText(rawTranslations.hours3)}</p>
 
-          <img src="https://picsum.photos/seed/mockup/800/500" alt="Course Mockup" className="w-full max-w-2xl mx-auto mb-10 drop-shadow-2xl" referrerPolicy="no-referrer" />
+          {/* Past Training Sessions Layout System with explicit sizing containment constraints */}
+          <div className="w-full max-w-3xl mx-auto mb-12 p-4 bg-gray-50 rounded-3xl border border-gray-100 shadow-sm relative block overflow-hidden">
+            <Carousel
+              items={carouselItems}
+              className="w-full h-[220px] sm:h-[340px] md:h-[440px] rounded-2xl overflow-hidden"
+            />
+          </div>
 
-          <button onClick={handleCtaClick} className="w-full max-w-xl mx-auto bg-red-600 hover:bg-red-700 text-white font-bold text-xl py-4 px-8 rounded-md shadow-lg transition-transform hover:scale-105 flex flex-col items-center justify-center">
-            <span>{t.ctaButton}</span>
-            <span className="text-sm font-normal mt-1">{t.onlyRs}</span>
+          <button onClick={handleCtaClick} className="w-full max-w-xl mx-auto bg-marigold hover:bg-yellow text-forest font-black text-xl py-4 px-8 rounded-xl shadow-xl transition-all transform hover:-translate-y-0.5 flex flex-col items-center justify-center">
+            <span>{renderText(rawTranslations.ctaButton)}</span>
+            <span className="text-sm font-bold opacity-90 mt-1">{formattedFee}/-</span>
           </button>
-          <p className="mt-4 font-bold text-sm">
-            {t.registerBefore.split('₹')[0]}<span className="text-yellow-600">₹ {t.registerBefore.split('₹')[1]}</span>
-          </p>
+          <p className="mt-4 font-extrabold text-sm text-gray-500">{renderText(rawTranslations.registerBefore)}</p>
         </div>
       </div>
 
-      {/* Checkmarks Section */}
-      <div className="bg-[#1a1025] text-white py-16 px-4">
+      {/* Feature Bullet Checklist Grid */}
+      <div className="bg-forest text-white py-16 px-4 border-t border-b border-darkmint relative z-20">
         <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
-          {t.checkmarks.map((mark: string, i: number) => (
-            <div key={i} className="flex items-start gap-3">
-              <Check className="text-green-500 shrink-0 mt-1" size={20} />
-              <p className="text-gray-300 text-sm md:text-base">
+          {rawTranslations.checkmarks.map((mark: string, i: number) => (
+            <div key={i} className="flex items-start gap-3 bg-darkmint/30 p-4 rounded-xl border border-white/5">
+              <Check className="text-marigold shrink-0 mt-1" size={20} />
+              <p className="text-gray-200 text-sm md:text-base leading-relaxed">
                 {mark.split('-').map((part, idx) => (
-                  <span key={idx} className={idx === 0 ? "font-bold text-white" : "text-green-400"}>
-                    {idx > 0 ? ` - ${part}` : part}
+                  <span key={idx} className={idx === 0 ? "font-bold text-white" : "text-lime font-medium"}>
+                    {idx > 0 ? ` - ${renderText(part)}` : renderText(part)}
                   </span>
                 ))}
               </p>
@@ -201,90 +268,85 @@ export default function Booking() {
         </div>
       </div>
 
-      {/* More Results Section */}
-      <div className="bg-white py-16 px-4 text-center">
+      {/* Extended Video Feeds */}
+      <div className="bg-white py-16 px-4 text-center relative z-20">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-2xl md:text-3xl font-bold mb-10">{t.moreResultsTitle}</h2>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {[3, 4, 5, 6].map((i) => (
-              <div key={i} className="relative aspect-video bg-black rounded-lg overflow-hidden border-4 border-gray-200 shadow-md">
-                <img src={`https://picsum.photos/seed/result${i}/800/450`} alt={`Result ${i}`} className="w-full h-full object-cover opacity-70" referrerPolicy="no-referrer" />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center cursor-pointer">
-                    <Play className="text-black ml-1" size={24} fill="currentColor" />
-                  </div>
-                </div>
+          <h2 className="text-2xl md:text-3xl font-extrabold text-forest mb-10">{renderText(rawTranslations.moreResultsTitle)}</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center">
+            {['https://www.youtube.com/embed/In-md0krEBY', 'https://www.youtube.com/embed/B1SVZwTZDkc'].map((videoSrc, i) => (
+              <div key={i} className="w-full max-w-[300px] relative aspect-[9/16] bg-black rounded-3xl overflow-hidden border border-gray-100 shadow-md">
+                <iframe src={`${videoSrc}?rel=0&modestbranding=1`} title={`Review ${i + 3}`} className="absolute inset-0 w-full h-full border-0" allowFullScreen />
               </div>
             ))}
           </div>
         </div>
       </div>
 
-      {/* Timer Section */}
-      <div className="bg-white py-8 px-4 text-center border-t border-gray-200">
-        <div className="max-w-3xl mx-auto">
-          <h2 className="text-2xl font-bold mb-6">{t.timeRunningOut}</h2>
-          
-          <div className="bg-black text-yellow-400 inline-flex rounded-md p-4 mb-6 shadow-xl">
-            <div className="flex flex-col items-center px-4 border-r border-gray-700">
-              <span className="text-3xl md:text-5xl font-bold">{timeLeft.days.toString().padStart(2, '0')}</span>
-              <span className="text-xs md:text-sm text-white mt-1">DAYS</span>
-            </div>
-            <div className="flex flex-col items-center px-4 border-r border-gray-700">
-              <span className="text-3xl md:text-5xl font-bold">{timeLeft.hours.toString().padStart(2, '0')}</span>
-              <span className="text-xs md:text-sm text-white mt-1">HOURS</span>
-            </div>
-            <div className="flex flex-col items-center px-4 border-r border-gray-700">
-              <span className="text-3xl md:text-5xl font-bold">{timeLeft.minutes.toString().padStart(2, '0')}</span>
-              <span className="text-xs md:text-sm text-white mt-1">MINUTES</span>
-            </div>
-            <div className="flex flex-col items-center px-4">
-              <span className="text-3xl md:text-5xl font-bold">{timeLeft.seconds.toString().padStart(2, '0')}</span>
-              <span className="text-xs md:text-sm text-white mt-1">SECONDS</span>
-            </div>
+      {/* Real-time Counter Matrix */}
+      <div className="bg-gray-100 py-12 px-4 text-center border-t border-b border-gray-200 relative z-20">
+        <div className="max-w-3xl mx-auto space-y-6">
+          <h2 className="text-2xl font-bold text-gray-800 flex items-center justify-center gap-2">
+            <Clock size={22} className="text-marigold animate-spin" /> {renderText(rawTranslations.timeRunningOut)}
+          </h2>
+
+          <div className="bg-forest text-marigold inline-flex rounded-2xl p-4 shadow-2xl border border-darkmint">
+            {[['DAYS', timeLeft.days], ['HOURS', timeLeft.hours], ['MINUTES', timeLeft.minutes], ['SECONDS', timeLeft.seconds]].map((unit, idx) => (
+              <div key={idx} className={`flex flex-col items-center px-5 ${idx < 3 ? 'border-r border-white/10' : ''}`}>
+                <span className="text-3xl md:text-5xl font-black text-white tracking-tight">{String(unit[1]).padStart(2, '0')}</span>
+                <span className="text-[10px] uppercase font-bold tracking-wider text-gray-400 mt-1.5">{unit[0]}</span>
+              </div>
+            ))}
           </div>
-          
-          <p className="text-lg md:text-xl font-medium">
-            {t.timerZero.split('शून्यावर')[0]}<span className="text-red-600 font-bold">शून्यावर</span>{t.timerZero.split('शून्यावर')[1]?.split('2,000')[0]}<span className="text-red-600 font-bold">2,000</span>{t.timerZero.split('2,000')[1]}
-          </p>
+          <p className="text-lg md:text-xl font-semibold text-gray-700">{renderText(rawTranslations.timerZero)}</p>
         </div>
       </div>
 
-      {/* About Speaker Section */}
-      <div className="bg-black text-white py-16 px-4">
+      {/* About Speaker Corporate Row Panel */}
+      <div className="bg-forest text-white py-16 px-4 relative z-20">
         <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-8">
           <div className="w-full md:w-1/3">
-            <img src="https://picsum.photos/seed/speaker/400/500" alt="Speaker" className="w-full rounded-lg shadow-2xl border-4 border-gray-800" referrerPolicy="no-referrer" />
+            <img src={logoImg} alt="RopWala Logo" className="h-full w-auto object-contain" />
           </div>
-          <div className="w-full md:w-2/3 text-center md:text-left">
-            <h2 className="text-2xl font-bold mb-2">{t.aboutSpeakerTitle}</h2>
-            <p className="text-gray-400 italic mb-6">एक वेळ होती...</p>
-            <p className="text-sm md:text-base text-gray-300 mb-4 leading-relaxed">{t.aboutSpeakerText1}</p>
-            <p className="text-sm md:text-base text-gray-300 mb-8 leading-relaxed font-bold">{t.aboutSpeakerText2}</p>
-            <h3 className="text-xl font-bold">{t.joinMe}</h3>
+          <div className="w-full md:w-2/3 text-center md:text-left space-y-4">
+            <h2 className="text-2xl md:text-3xl font-extrabold text-white">{renderText(rawTranslations.aboutSpeakerTitle)}</h2>
+            <p className="text-marigold italic font-semibold text-lg">एक वेळ होती...</p>
+            <p className="text-sm md:text-base text-gray-300 leading-relaxed">{renderText(rawTranslations.aboutSpeakerText1)}</p>
+            <p className="text-sm md:text-base text-gray-200 leading-relaxed font-bold border-l-4 border-marigold pl-4">{renderText(rawTranslations.aboutSpeakerText2)}</p>
+            <h3 className="text-xl font-bold text-white pt-2">{renderText(rawTranslations.joinMe)}</h3>
           </div>
         </div>
       </div>
 
-      {/* Bonuses Section */}
-      <div className="bg-white py-16 px-4 text-center">
+      {/* 5 Dynamic Bonus Configuration Grid items */}
+      <div className="bg-white py-16 px-4 text-center relative z-20">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-xl font-bold mb-10">
-            {t.bonusesTitle.split('₹')[0]}<span className="text-yellow-600">₹ {t.bonusesTitle.split('₹')[1]}</span>
+          <h2 className="text-2xl font-black text-forest mb-10 max-w-2xl mx-auto leading-snug">
+            {renderText(rawTranslations.bonusesTitle)}
           </h2>
-          
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {t.bonuses.map((bonus: any, i: number) => (
-              <div key={i} className="border border-gray-200 rounded-lg overflow-hidden shadow-md">
-                <div className="bg-yellow-400 text-black font-bold py-2 border-b border-gray-200">
-                  🎁 {bonus.title}
+            {rawTranslations.bonuses.map((bonus: any, i: number) => (
+              <div key={i} className="border border-gray-200 rounded-3xl overflow-hidden shadow-md bg-gray-50 flex flex-col hover:shadow-xl transition-all duration-300">
+                <div className="bg-marigold text-forest font-black py-2.5 border-b border-gray-200 uppercase tracking-wide text-sm">
+                  🎁 {renderText(bonus.title)}
                 </div>
-                <div className="p-6">
-                  <img src={`https://picsum.photos/seed/bonus${i}/200/200`} alt={bonus.name} className="w-32 h-32 mx-auto mb-4 object-contain" referrerPolicy="no-referrer" />
-                  <h3 className="font-bold text-lg mb-2">{bonus.name}</h3>
-                  <p className="text-sm text-gray-600 mb-4">{bonus.desc}</p>
-                  <p className="font-bold text-sm text-green-600">{bonus.value}</p>
+                <div className="p-6 flex-grow flex flex-col justify-between space-y-4">
+                  {/* Fetches from local asset array matching image layout index smoothly */}
+                  <img
+                    src={localBonusImages[i % localBonusImages.length]}
+                    alt={bonus.name}
+                    className="w-45 h-45 mx-auto object-contain rounded-3xl mix-blend-multiply"
+                  />
+                  <div className="space-y-1">
+                    <h3 className="font-extrabold text-gray-900 text-lg leading-tight">
+                      {renderText(bonus.name)}
+                    </h3>
+                    <p className="text-sm text-gray-600 leading-relaxed">
+                      {renderText(bonus.desc)}
+                    </p>
+                  </div>
+                  <p className="font-bold text-sm text-forest bg-lime/20 py-1.5 rounded-full mt-2">
+                    {renderText(bonus.price)} <span className='line-through'>{renderText(bonus.value)}</span> {renderText(bonus.finalvalue)}
+                  </p>
                 </div>
               </div>
             ))}
@@ -292,87 +354,78 @@ export default function Booking() {
         </div>
       </div>
 
-      {/* Summary & Final CTA */}
-      <div className="bg-white py-12 px-4 text-center border-t border-gray-200">
-        <div className="max-w-3xl mx-auto">
-          <h2 className="text-2xl font-bold mb-4">{t.summaryTitle}</h2>
-          <p className="text-red-600 font-bold text-xl mb-4">{t.totalValue}</p>
-          <p className="text-gray-600 line-through mb-2">{t.normalPrice}</p>
-          <p className="text-3xl font-extrabold text-green-700 mb-8">{t.todayPrice}</p>
-          
-          <h2 className="text-2xl font-bold mb-6">{t.timeRunningOut}</h2>
-          
-          <div className="bg-black text-yellow-400 inline-flex rounded-md p-4 mb-8 shadow-xl">
-            <div className="flex flex-col items-center px-4 border-r border-gray-700">
-              <span className="text-3xl md:text-5xl font-bold">{timeLeft.days.toString().padStart(2, '0')}</span>
-              <span className="text-xs md:text-sm text-white mt-1">DAYS</span>
-            </div>
-            <div className="flex flex-col items-center px-4 border-r border-gray-700">
-              <span className="text-3xl md:text-5xl font-bold">{timeLeft.hours.toString().padStart(2, '0')}</span>
-              <span className="text-xs md:text-sm text-white mt-1">HOURS</span>
-            </div>
-            <div className="flex flex-col items-center px-4 border-r border-gray-700">
-              <span className="text-3xl md:text-5xl font-bold">{timeLeft.minutes.toString().padStart(2, '0')}</span>
-              <span className="text-xs md:text-sm text-white mt-1">MINUTES</span>
-            </div>
-            <div className="flex flex-col items-center px-4">
-              <span className="text-3xl md:text-5xl font-bold">{timeLeft.seconds.toString().padStart(2, '0')}</span>
-              <span className="text-xs md:text-sm text-white mt-1">SECONDS</span>
-            </div>
+      {/* Summary Matrix */}
+      <div className="bg-white py-12 px-4 text-center border-t border-gray-200 relative z-20">
+        <div className="max-w-3xl mx-auto space-y-6">
+          <h2 className="text-2xl md:text-3xl font-extrabold text-forest">{renderText(rawTranslations.summaryTitle)}</h2>
+          <div className="bg-gray-50 p-6 rounded-3xl border border-gray-100 max-w-md mx-auto space-y-2">
+            <p className="text-red-600 font-black text-xl">{renderText(rawTranslations.totalValue)}</p>
+            <p className="text-gray-400 line-through text-base font-semibold">{renderText(rawTranslations.normalPrice)}</p>
+            <p className="text-3xl font-black text-forest tracking-tight">{renderText(rawTranslations.todayPrice)}</p>
           </div>
 
-          <p className="text-lg font-bold mb-6">ही कार्यशाळा एखाद्या मॅजिक शोसारखी असणार आहे, जिथे मी माझ्या स्क्रीनवर काय करतो ते पाहून तुम्ही थक्क व्हाल!</p>
+          <h2 className="text-2xl font-bold text-gray-800 pt-4">{renderText(rawTranslations.timeRunningOut)}</h2>
 
-          <button className="w-full max-w-xl mx-auto bg-red-600 hover:bg-red-700 text-white font-bold text-xl py-4 px-8 rounded-md shadow-lg transition-transform hover:scale-105 flex flex-col items-center justify-center mb-4">
-            <span>{t.ctaButton}</span>
-            <span className="text-sm font-normal mt-1">{t.onlyRs}</span>
-          </button>
-          <p className="font-bold text-sm mb-16">
-            {t.registerBefore.split('₹')[0]}<span className="text-yellow-600">₹ {t.registerBefore.split('₹')[1]}</span>
+          <div className="bg-forest text-marigold inline-flex rounded-2xl p-4 shadow-xl border border-darkmint">
+            {[['DAYS', timeLeft.days], ['HOURS', timeLeft.hours], ['MINUTES', timeLeft.minutes], ['SECONDS', timeLeft.seconds]].map((unit, idx) => (
+              <div key={idx} className={`flex flex-col items-center px-4 ${idx < 3 ? 'border-r border-white/10' : ''}`}>
+                <span className="text-2xl md:text-4xl font-bold text-white">{String(unit[1]).padStart(2, '0')}</span>
+                <span className="text-[9px] font-bold text-gray-400 mt-1">{unit[0]}</span>
+              </div>
+            ))}
+          </div>
+
+          <p className="text-base md:text-lg font-bold text-gray-700 max-w-xl mx-auto leading-relaxed">
+            ही कार्यशाळा एखाद्या मॅजिक शोसारखी असणार आहे, जिथे मी माझ्या स्क्रीनवर काय करतो ते पाहून तुम्ही थक्क व्हाल!
           </p>
 
-          {/* FAQ */}
-          <h2 className="text-3xl font-bold mb-8">{t.faqTitle}</h2>
+          <button onClick={handleCtaClick} className="w-full max-w-xl mx-auto bg-marigold hover:bg-yellow text-forest font-black text-xl py-4 px-8 rounded-xl shadow-xl transition-all transform hover:-translate-y-0.5 flex flex-col items-center justify-center">
+            <span>{renderText(rawTranslations.ctaButton)}</span>
+            <span className="text-sm font-bold opacity-90 mt-1">{formattedFee}/-</span>
+          </button>
+          <p className="font-extrabold text-sm text-gray-500">{renderText(rawTranslations.registerBefore)}</p>
+
+          {/* Faq Collapse Layout Container Element */}
+          <h2 className="text-3xl font-extrabold text-forest pt-12 mb-8">{renderText(rawTranslations.faqTitle)}</h2>
           <div className="max-w-3xl mx-auto text-left space-y-4">
-            {t.faqs.map((faq: any, i: number) => (
-              <div key={i} className="border border-gray-300 rounded-md overflow-hidden bg-[#1a2b4c] text-white">
-                <button 
-                  onClick={() => setOpenFaq(openFaq === i ? null : i)}
-                  className="w-full px-6 py-4 flex justify-between items-center font-bold text-left hover:bg-[#233860] transition-colors"
-                >
-                  {faq.q}
-                  {openFaq === i ? <ChevronUp size={20} /> : <ChevronDown size={20} />}
+            {rawTranslations.faqs.map((faq: any, i: number) => (
+              <div key={i} className="border border-gray-200 rounded-2xl overflow-hidden shadow-sm bg-white">
+                <button onClick={() => setOpenFaq(openFaq === i ? null : i)} className="w-full px-6 py-4 flex justify-between items-center font-bold text-left bg-forest text-white hover:bg-darkmint transition-colors">
+                  <span className="pr-4">{renderText(faq.q)}</span>
+                  {openFaq === i ? <ChevronUp size={20} className="shrink-0" /> : <ChevronDown size={20} className="shrink-0" />}
                 </button>
-                {openFaq === i && (
-                  <div className="px-6 py-4 bg-white text-gray-800 border-t border-gray-300">
-                    {faq.a}
-                  </div>
-                )}
+                {openFaq === i && <div className="px-6 py-5 text-gray-700 border-t border-gray-100 leading-relaxed text-base">{renderText(faq.a)}</div>}
               </div>
             ))}
           </div>
         </div>
       </div>
 
-      {/* Sticky Footer CTA */}
-      <div className="fixed bottom-0 left-0 right-0 bg-[#0f172a] text-white p-4 flex justify-between items-center z-50 border-t border-gray-800 shadow-[0_-10px_30px_rgba(0,0,0,0.3)]">
+      {/* Synchronized Sticky Bottom Floating Bar with Striking Price Cancellation Treatment */}
+      <div className="fixed bottom-0 left-0 right-0 bg-[#0b3c26] text-white p-4 flex justify-between items-center z-50 border-t border-darkmint shadow-[0_-10px_30px_rgba(0,0,0,0.3)]">
         <div className="flex flex-col md:flex-row md:items-center gap-1 md:gap-6">
-          <div className="text-yellow-400 font-bold text-lg md:text-xl">
-            {t.stickyPrice.split('₹199/-')[0]}<span className="text-white">₹199/-</span>
+          <div className="text-marigold font-black text-lg md:text-xl tracking-tight">
+            <span className="text-gray-400 line-through mr-2 text-sm md:text-base font-semibold decoration-red-500 decoration-2">
+              {TRAINING_CONFIG.currencySymbol}{TRAINING_CONFIG.baseFee}
+            </span>
+            <span className="text-white">
+              {TRAINING_CONFIG.currencySymbol}{TRAINING_CONFIG.discountedFee}/-
+            </span>
           </div>
-          <div className="text-xs md:text-sm font-medium hidden sm:block">
-            {t.stickyHurry}
+          <div className="text-xs md:text-sm font-bold text-gray-300 hidden sm:block">
+            {renderText(rawTranslations.stickyHurry)}
           </div>
         </div>
         <div className="flex items-center gap-4">
-          <div className="hidden md:flex text-yellow-400 font-mono text-lg font-bold">
-            {timeLeft.hours.toString().padStart(2, '0')} : {timeLeft.minutes.toString().padStart(2, '0')} : {timeLeft.seconds.toString().padStart(2, '0')}
+          <div className="hidden md:flex text-marigold font-mono text-lg font-black tracking-widest bg-black/20 px-3 py-1 rounded-md border border-white/5">
+            {String(timeLeft.hours).padStart(2, '0')} : {String(timeLeft.minutes).padStart(2, '0')} : {String(timeLeft.seconds).padStart(2, '0')}
           </div>
-          <button className="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-6 rounded-md shadow-lg transition-colors whitespace-nowrap text-sm md:text-base">
+          <button onClick={handleCtaClick} className="bg-marigold hover:bg-yellow text-forest font-black py-2.5 px-3 rounded-full shadow-lg transition-colors whitespace-nowrap text-xs md:text-base uppercase tracking-wider">
             Join Bootcamp Now →
           </button>
         </div>
       </div>
+
       <ContactFAB />
     </div>
   );

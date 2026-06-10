@@ -4,9 +4,30 @@ export const translations = {
     hero: { badge: "Ashta Training Center", title1: "Modern Nursery", title2: "Farming Training", desc: "Start your profitable modern nursery business with our expert guidance, practical training, and lifetime support.", viewBatch: "View Next Batch", download: "Download Brochure" },
     about: { title: "Why Choose RopWala?", desc: "We don't just teach farming; we build agri-entrepreneurs.", readMore: "Read More About Us" },
     training: { title: "Comprehensive Curriculum", desc: "Everything you need to know from seed to sale.", readMore: "View Full Curriculum" },
-    reviews: { title: "Join 500+ Successful Agri-Entrepreneurs", readMore: "Watch Student Reviews" },
-    booking: { warning: "Warning: Only 15 seats per batch. Ashta batch filling fast!", title: "Master Modern Nursery Farming", desc: "Join the exclusive 1-day intensive training at Ashta.", whatYouGet: "What You Get", whyModern: "Why Modern Nursery?", secureSeat: "Secure Your Seat", offerEndsIn: "Offer Ends In:", days: "Days", hours: "Hours", mins: "Mins", secs: "Secs" },
-    gallery: { title: "Our Facilities", desc: "Take a look at our state-of-the-art nursery and training center." },
+    reviews: {
+      title: "Join 500+ Successful Agri-Entrepreneurs",
+      readMore: "Watch Student Reviews",
+      videoTitle: "Student Video Testimonials",
+      videoDesc: "Hear directly from our successful agri-entrepreneurs",
+      writtenTitle: "Student Success Stories",
+      writtenDesc: "Real experiences from our trained farmers"
+    },
+    booking: {
+      warning: "Warning: Only 15 seats per batch. Ashta batch filling fast!",
+      title: "Master Modern Nursery Farming",
+      desc: "Join the exclusive 1-day intensive training at Ashta.",
+      whatYouGet: "What You Get",
+      whyModern: "Why Modern Nursery?",
+      secureSeat: "Secure Your Seat",
+      offerEndsIn: "Offer Ends In:",
+      days: "Days",
+      hours: "Hours",
+      mins: "Mins",
+      secs: "Secs",
+      intensiveLabel: '"1 DAY INTENSIVE NURSERY TRAINING"',
+      bonusesHeading: "Register before deadline to unlock bonuses worth ₹ 12,000"
+    },
+    gallery: { title: "Past Training Sessions", desc: "Glimpses of our successfully completed training sessions." },
     footer: { desc: "Empowering farmers with modern nursery techniques. Join our Ashta training center to build a profitable agricultural business.", quickLinks: "Quick Links", contactUs: "Contact Us" },
     features: [
       { title: "Practical Training", desc: "Hands-on experience at our state-of-the-art Ashta facility." },
@@ -93,9 +114,16 @@ export const translations = {
     hero: { badge: "आष्टा ट्रेनिंग सेंटर", title1: "आधुनिक रोपवाटिका", title2: "प्रशिक्षण", desc: "आमच्या तज्ञांच्या मार्गदर्शनाखाली, प्रॅक्टिकल ट्रेनिंग आणि कायमस्वरूपी सपोर्टसह तुमचा स्वतःचा फायदेशीर रोपवाटिका व्यवसाय सुरू करा.", viewBatch: "पुढची बॅच पहा", download: "माहितीपत्रक डाउनलोड करा" },
     about: { title: "रोपवालाच का?", desc: "आम्ही फक्त शेती शिकवत नाही; आम्ही शेतकरी उद्योजक घडवतो.", readMore: "आमच्याबद्दल अधिक वाचा" },
     training: { title: "संपूर्ण अभ्यासक्रम", desc: "बियाण्यापासून ते रोप विकण्यापर्यंत सगळी माहिती.", readMore: "संपूर्ण अभ्यासक्रम पहा" },
-    reviews: { title: "५००+ यशस्वी शेतकरी उद्योजकांमध्ये सामील व्हा", readMore: "शेतकऱ्यांचे अनुभव पहा" },
+    reviews: {
+      title: "५००+ यशस्वी शेतकरी उद्योजकांमध्ये सामील व्हा",
+      readMore: "शेतकऱ्यांचे अनुभव पहा",
+      videoTitle: "शेतकऱ्यांचे व्हिडिओ अनुभव",
+      videoDesc: "आमच्या यशस्वी शेतकरी उद्योजकांकडून थेट ऐका",
+      writtenTitle: "शेतकऱ्यांच्या यशोगाथा",
+      writtenDesc: "आमच्या प्रशिक्षित शेतकऱ्यांचे वास्तविक अनुभव"
+    },
     booking: { warning: "लवकर करा! १५ एप्रिल २०२५, रात्री ९ वाजेपर्यंतच बुकिंग चालू आहे. एका बॅचमध्ये फक्त १५ जागा!", title: "आधुनिक रोपवाटिका व्यवसाय शिका", desc: "आष्टा येथील १ दिवसाच्या खास प्रॅक्टिकल ट्रेनिंगमध्ये सामील व्हा.", whatYouGet: "तुम्हाला काय काय मिळेल?", whyModern: "आधुनिक रोपवाटिकाच का?", secureSeat: "तुमची सीट बुक करा", offerEndsIn: "ऑफर संपायला वेळ शिल्लक:", days: "दिवस", hours: "तास", mins: "मिनिटे", secs: "सेकंद" },
-    gallery: { title: "आमची सुविधा", desc: "आमच्या अत्याधुनिक रोपवाटिका आणि प्रशिक्षण केंद्राची एक झलक पहा." },
+    gallery: { title: "मागील प्रशिक्षण सत्रे", desc: "आमच्या यशस्वीरित्या पूर्ण झालेल्या प्रशिक्षण सत्रांची एक झलक." },
     footer: { desc: "शेतकऱ्यांना आधुनिक रोपवाटिका तंत्रज्ञानाने सक्षम करत आहोत. फायदेशीर व्यवसाय सुरू करण्यासाठी आमच्या आष्टा ट्रेनिंग सेंटरमध्ये सामील व्हा.", quickLinks: "महत्त्वाच्या लिंक्स", contactUs: "संपर्क" },
     features: [
       { title: "प्रॅक्टिकल ट्रेनिंग", desc: "आमच्या आष्टा येथील हाय-टेक नर्सरीमध्ये प्रत्यक्ष काम करण्याचा अनुभव." },
@@ -149,7 +177,7 @@ export const translations = {
     aboutPage: {
       ourStory: "आमची गोष्ट",
       story1: "पारंपारिक शेतीला एका फायदेशीर, आधुनिक व्यवसायात बदलण्याच्या एकाच उद्देशाने रोपवाला ॲग्री प्रायव्हेट लिमिटेडची स्थापना झाली. आम्ही पाहिले की रोपे मोठ्या प्रमाणावर मरत असल्यामुळे आणि हवामानाच्या लहरीपणामुळे शेतकरी संघर्ष करत होते.",
-      story2: "आधुनिक पॉलीहाऊस नर्सरी तंत्रज्ञान आणून, आम्ही शेकडो शेतकऱ्यांना त्यांच्या स्वतःच्या यशस्वी रोपवाटिका उभारण्यास मदत केली সমাধल्या आहेत, ज्यामुळे त्यांचा नफा ३ पटीने वाढला आहे.",
+      story2: "आधुनिक पॉलीहाऊस नर्सरी तंत्रज्ञान आणून, आम्ही शेकडो शेतकऱ्यांना त्यांच्या स्वतःच्या यशस्वी रोपवाटिका उभारण्यास मदत केली आहे, ज्यामुळे त्यांचा नफा ३ पटीने वाढला आहे.",
       missionTitle: "आमचे ध्येय",
       missionDesc: "१०,००० शेतकऱ्यांना आधुनिक रोपवाटिकेचे कौशल्य देऊन सक्षम करणे आणि त्यांना शाश्वत, फायदेशीर व्यवसाय उभारण्यास मदत करणे.",
       visionTitle: "आमचा दृष्टिकोन",
@@ -182,9 +210,16 @@ export const translations = {
     hero: { badge: "आष्टा प्रशिक्षण केंद्र", title1: "आधुनिक नर्सरी", title2: "खेती प्रशिक्षण", desc: "हमारे विशेषज्ञ मार्गदर्शन, व्यावहारिक प्रशिक्षण और आजीवन समर्थन के साथ अपना लाभदायक आधुनिक नर्सरी व्यवसाय शुरू करें।", viewBatch: "अगला बैच देखें", download: "ब्रोशर डाउनलोड करें" },
     about: { title: "रोपवाला क्यों चुनें?", desc: "हम सिर्फ खेती नहीं सिखाते; हम कृषि-उद्यमी बनाते हैं।", readMore: "हमारे बारे में और पढ़ें" },
     training: { title: "व्यापक पाठ्यक्रम", desc: "बीज से बिक्री तक आपको जो कुछ भी जानने की आवश्यकता है।", readMore: "पूरा पाठ्यक्रम देखें" },
-    reviews: { title: "500+ सफल कृषि-उद्यमियों में शामिल हों", readMore: "छात्र समीक्षाएं देखें" },
+    reviews: {
+      title: "500+ सफल कृषि-उद्यमियों में शामिल हों",
+      readMore: "छात्र समीक्षाएं देखें",
+      videoTitle: "छात्र वीडियो समीक्षाएं",
+      videoDesc: "हमारे सफल कृषि-उद्यमियों से सीधे सुनें",
+      writtenTitle: "छात्रों की सफलता की कहानियां",
+      writtenDesc: "हमारे प्रशिक्षित किसानों के वास्तविक अनुभव"
+    },
     booking: { warning: "चेतावनी: प्रति बैच केवल 15 सीटें। आष्टा बैच तेजी से भर रहा है!", title: "आधुनिक नर्सरी खेती में महारत हासिल करें", desc: "आष्टा में विशेष 1-दिवसीय गहन प्रशिक्षण में शामिल हों।", whatYouGet: "आपको क्या मिलेगा", whyModern: "आधुनिक नर्सरी क्यों?", secureSeat: "अपनी सीट सुरक्षित करें", offerEndsIn: "ऑफर समाप्त होने में:", days: "दिन", hours: "घंटे", mins: "मिनट", secs: "सेकंड" },
-    gallery: { title: "हमारी सुविधा", desc: "हमारी अत्याधुनिक नर्सरी और प्रशिक्षण केंद्र की एक झलक देखें।" },
+    gallery: { title: "पिछले प्रशिक्षण सत्र", desc: "हमारे सफलतापूर्वक पूर्ण हुए प्रशिक्षण सत्रों की एक झलक।" },
     footer: { desc: "किसानों को आधुनिक नर्सरी तकनीकों के साथ सशक्त बनाना। एक लाभदायक कृषि व्यवसाय बनाने के लिए हमारे आष्टा प्रशिक्षण केंद्र से जुड़ें।", quickLinks: "त्वरित लिंक", contactUs: "संपर्क करें" },
     features: [
       { title: "व्यावहारिक प्रशिक्षण", desc: "हमारी अत्याधुनिक आष्टा सुविधा में व्यावहारिक अनुभव।" },
@@ -213,7 +248,7 @@ export const translations = {
         successDesc: "पंजीकरण के लिए धन्यवाद। हमने आपके व्हाट्सएप नंबर पर स्थान विवरण भेज दिया है।",
         date: "16 अप्रैल 2025",
         location: "आष्टा प्रशिक्षण केंद्र",
-        addToCalendar: "कैलेंडर में जोड़ें"
+        addToCalendar: "केंडर में जोड़ें"
       }
     },
     reviewsList: [
@@ -244,9 +279,7 @@ export const translations = {
       visionTitle: "हमारा दृष्टिकोण",
       visionDesc: "व्यावहारिक, परिणाम-उन्मुख शिक्षा के लिए जाने जाने वाले भारत में अग्रणी कृषि प्रशिक्षण संस्थान बनना।",
       valuesTitle: "हमारे मूल्य",
-      valuesDesc: "ईमानदारी, नवाचार, किसान-प्रथम दृष्टिकोण, और हम जो कुछ भी करते हैं उसमें उत्कृष्टता के प्रति प्रतिबद्धता।",
-      ourFounders: "हमारे संस्थापक",
-      founder: "संस्थापक"
+      valuesDesc: "ईमानदारी, नवाचार,关怀, किसान-प्रथम दृष्टिकोण, और हम जो कुछ भी करते हैं उसमें उत्कृष्टता के प्रति प्रतिबद्धता।"
     },
     privacyPolicy: {
       title: "गोपनीयता नीति",
@@ -269,11 +302,18 @@ export const translations = {
   kn: {
     nav: { home: "ಮುಖಪುಟ", training: "ತರಬೇತಿ ವಿವರಗಳು", about: "ನಮ್ಮ ಬಗ್ಗೆ", reviews: "ವಿಮರ್ಶೆಗಳು", call: "ಕರೆ ಮಾಡಿ", book: "ಸೀಟ್ ಬುಕ್ ಮಾಡಿ", terms: "ನಿಯಮಗಳು ಮತ್ತು ಷರತ್ತುಗಳು" },
     hero: { badge: "ಅಷ್ಟಾ ತರಬೇತಿ ಕೇಂದ್ರ", title1: "ಆಧುನಿಕ ನರ್ಸರಿ", title2: "ಕೃಷಿ ತರಬೇತಿ", desc: "ನಮ್ಮ ತಜ್ಞರ ಮಾರ್ಗದರ್ಶನ, ಪ್ರಾಯೋಗಿಕ ತರಬೇತಿ ಮತ್ತು ಜೀವಮಾನದ ಬೆಂಬಲದೊಂದಿಗೆ ನಿಮ್ಮ ಲಾಭದಾಯಕ ಆಧುನಿಕ ನರ್ಸರಿ ವ್ಯವಹಾರವನ್ನು ಪ್ರಾರಂಭಿಸಿ.", viewBatch: "ಮುಂದಿನ ಬ್ಯಾಚ್ ವೀಕ್ಷಿಸಿ", download: "ಕರಪತ್ರ ಡೌನ್‌ಲೋಡ್ ಮಾಡಿ" },
-    about: { title: "ರೋಪ್‌ವಾಲಾ ಏಕೆ ಆರಿಸಬೇಕು?", desc: "ನಾವು ಕೇವಲ ಕೃಷಿಯನ್ನು ಕಲಿಸುವುದಿಲ್ಲ; ನಾವು ಕೃಷಿ ಉದ್ಯಮಿಗಳನ್ನು ನಿರ್ಮಿಸುತ್ತೇವೆ.", readMore: "ನಮ್ಮ ಬಗ್ಗೆ ಇನ್ನಷ್ಟು ಓದಿ" },
+    about: { title: "ರೋಪ್‌ವಾಲಾ ಏಕೆ ಆರಿಸಬೇಕು?", desc: "ನಾವು ಕೃಷಿಯನ್ನು ಕಲಿಸುವುದಿಲ್ಲ; ನಾವು ಕೃಷಿ ಉದ್ಯಮಿಗಳನ್ನು ನಿರ್ಮಿಸುತ್ತೇವೆ.", readMore: "ನಮ್ಮ ಬಗ್ಗೆ ಇನ್ನಷ್ಟು ಓದಿ" },
     training: { title: "ಸಮಗ್ರ ಪಠ್ಯಕ್ರಮ", desc: "ಬೀಜದಿಂದ ಮಾರಾಟದವರೆಗೆ ನೀವು ತಿಳಿದುಕೊಳ್ಳಬೇಕಾದ ಎಲ್ಲವೂ.", readMore: "ಪೂರ್ಣ ಪಠ್ಯಕ್ರಮವನ್ನು ವೀಕ್ಷಿಸಿ" },
-    reviews: { title: "500+ ಯಶಸ್ವಿ ಕೃಷಿ-ಉದ್ಯಮಿಗಳನ್ನು ಸೇರಿ", readMore: "ವಿದ್ಯಾರ್ಥಿಗಳ ವಿಮರ್ಶೆಗಳನ್ನು ವೀಕ್ಷಿಸಿ" },
+    reviews: {
+      title: "500+ ಯಶಸ್ವಿ ಕೃಷಿ-ಉದ್ಯಮಿಗಳನ್ನು ಸೇರಿ",
+      readMore: "ವಿದ್ಯಾರ್ಥಿಗಳ ವಿಮರ್ಶೆಗಳನ್ನು ವೀಕ್ಷಿಸಿ",
+      videoTitle: "ವಿದ್ಯಾರ್ಥಿ ವಿಡಿಯೋ ವಿಮರ್ಶೆಗಳು",
+      videoDesc: "ನಮ್ಮ ಯಶಸ್ವಿ ಕೃಷಿ ಉದ್ಯಮಿಗಳಿಂದ ನೇರವಾಗಿ ಕೇಳಿ",
+      writtenTitle: "ವಿದ್ಯಾರ್ಥಿ ಯಶಸ್ಸಿನ ಕಥೆಗಳು",
+      writtenDesc: "ನಮ್ಮ ತರಬೇತಿ ಪಡೆದ ರೈತರ ನೈಜ ಅನುಭವಗಳು"
+    },
     booking: { warning: "ಎಚ್ಚರಿಕೆ: ಪ್ರತಿ ಬ್ಯಾಚ್‌ಗೆ ಕೇವಲ 15 ಸೀಟುಗಳು. ಅಷ್ಟಾ ಬ್ಯಾಚ್ ವೇಗವಾಗಿ ಭರ್ತಿಯಾಗುತ್ತಿದೆ!", title: "ಆಧುನಿಕ ನರ್ಸರಿ ಕೃಷಿಯನ್ನು ಕರಗತ ಮಾಡಿಕೊಳ್ಳಿ", desc: "ಅಷ್ಟಾದಲ್ಲಿ ವಿಶೇಷ 1-ದಿನದ ತೀವ್ರ ತರಬೇತಿಗೆ ಸೇರಿ.", whatYouGet: "ನೀವು ಏನು ಪಡೆಯುತ್ತೀರಿ", whyModern: "ಆಧುನಿಕ ನರ್ಸರಿ ಏಕೆ?", secureSeat: "ನಿಮ್ಮ ಸೀಟನ್ನು ಕಾಯ್ದಿರಿಸಿ", offerEndsIn: "ಆಫರ್ ಮುಕ್ತಾಯಗೊಳ್ಳಲು:", days: "ದಿನಗಳು", hours: "ಗಂಟೆಗಳು", mins: "ನಿಮಿಷಗಳು", secs: "ಸೆಕೆಂಡುಗಳು" },
-    gallery: { title: "ನಮ್ಮ ಸೌಲಭ್ಯಗಳು", desc: "ನಮ್ಮ ಅತ್ಯಾಧುನಿಕ ನರ್ಸರಿ ಮತ್ತು ತರಬೇತಿ ಕೇಂದ್ರವನ್ನು ನೋಡಿ." },
+    gallery: { title: "ಹಿಂದಿನ ತರಬೇತಿ ಅವಧಿಗಳು", desc: "ನಮ್ಮ ಯಶಸ್ವಿಯಾಗಿ ಪೂರ್ಣಗೊಂಡ ತರಬೇತಿ ಅವಧಿಗಳ ಒಂದು ನೋಟ." },
     footer: { desc: "ಆಧುನಿಕ ನರ್ಸರಿ ತಂತ್ರಗಳೊಂದಿಗೆ ರೈತರನ್ನು ಸಬಲೀಕರಣಗೊಳಿಸುವುದು. ಲಾಭದಾಯಕ ಕೃಷಿ ವ್ಯವಹಾರವನ್ನು ನಿರ್ಮಿಸಲು ನಮ್ಮ ಅಷ್ಟಾ ತರಬೇತಿ ಕೇಂದ್ರಕ್ಕೆ ಸೇರಿ.", quickLinks: "ತ್ವರಿತ ಲಿಂಕ್‌ಗಳು", contactUs: "ನಮ್ಮನ್ನು ಸಂಪರ್ಕಿಸಿ" },
     features: [
       { title: "ಪ್ರಾಯೋಗಿಕ ತರಬೇತಿ", desc: "ನಮ್ಮ ಅತ್ಯಾಧುನಿಕ ಅಷ್ಟಾ ಸೌಲಭ್ಯದಲ್ಲಿ ಪ್ರಾಯೋಗಿಕ ಅನುಭವ." },
@@ -311,12 +351,12 @@ export const translations = {
       { name: "ಪ್ರಕಾಶ್ ಜಾಧವ್", location: "ಸತಾರಾ", text: "ತರಬೇತಿಯ ನಂತರ ನಾನು ತಕ್ಷಣ ನನ್ನ ನರ್ಸರಿ ವ್ಯವಹಾರವನ್ನು ಪ್ರಾರಂಭಿಸಿದೆ. ರೋಪ್‌ವಾಲಾದಿಂದ ಜೀವಮಾನದ ಬೆಂಬಲ ಅಮೂಲ್ಯವಾಗಿದೆ. ಕೊಕೊಪೀಟ್ ತಯಾರಿಕೆ ತಂತ್ರಗಳು ಮಾತ್ರ ನನ್ನ ತರಬೇತಿ ವೆಚ್ಚವನ್ನು ಮರುಪಡೆಯಿತು." },
       { name: "ಅನಿಲ್ ದೇಸಾಯಿ", location: "ಪುಣೆ", text: "ನನ್ನ ಕೃಷಿ ವ್ಯವಹಾರಕ್ಕಾಗಿ ನಾನು ಮಾಡಿದ ಅತ್ಯುತ್ತಮ ಹೂಡಿಕೆ. ರೋಗ ನಿರ್ವಹಣೆ ಮತ್ತು ಹವಾಮಾನ ನಿಯಂತ್ರಣ ತಂತ್ರಗಳು ನಿಜವಾಗಿಯೂ ಸುಧಾರಿತವಾಗಿವೆ ಮತ್ತು ಕಾರ್ಯಗತಗೊಳಿಸಲು ಸುಲಭವಾಗಿದೆ." },
       { name: "ವಿಜಯ್ ಶಿಂಧೆ", location: "ನಾಸಿಕ್", text: "ನಾನು ಸಾಂಪ್ರದಾಯಿಕ ಕೃಷಿ ವಿಧಾನಗಳೊಂದಿಗೆ ಹೆಣಗಾಡುತ್ತಿದ್ದೆ. ಆಧುನಿಕ ನರ್ಸರಿ ತಂತ್ರಗಳನ್ನು ಬಳಸಿಕೊಂಡು ಲಾಭವನ್ನು ಹೇಗೆ ಹೆಚ್ಚಿಸುವುದು ಎಂದು ರೋಪ್‌ವಾಲಾ ತರಬೇತಿ ನನಗೆ ತೋರಿಸಿದೆ." },
-      { name: "ಸಂತೋಷ್ ಕದಮ್", location: "ಸೋಲಾಪುರ", text: "1-ದಿನದ ತೀವ್ರ ತರಬೇತಿಯು ಕ್ರಿಯಾಶೀಲ ಒಳನೋಟಗಳಿಂದ ತುಂಬಿದೆ. ವರ್ಷಗಳ ಪ್ರಯೋಗ ಮತ್ತು ದೋಷಗಳಿಗಿಂತ ನಾನು ಒಂದೇ ದಿನದಲ್ಲಿ ಹೆಚ್ಚು ಕಲಿತಿದ್ದೇನೆ." }
+      { name: "ಸಂತೋಷ್ ಕದಮ್", location: "ಸೋಲಾಪುರ", text: "1-ದಿನದ ತೀವ್ರ ತರಬೇತಿಯು ಕ್ರಿಯಾಶೀಲ ಒಳನೋಟಗಳಿಂದ ತುಂಬಿದೆ. ವರ್ಷಗಳ ಪ್ರಯೋಗ ಮತ್ತು ದೋಷಗಳಿಗಿಂತ ನಾನು ಒಂದೇ ದಿನದಲ್ಲಿ ಹೆಚ್ಚು ಕಲೆತಿದ್ದೇನೆ." }
     ],
     trainingPage: {
       title: "ನಮ್ಮ ತರಬೇತಿ ಸೌಲಭ್ಯ",
       curriculum: [
-        { title: "ನರ್ಸರಿ ವಿನ್ಯಾಸ", desc: "ಸ್ಥಳವನ್ನು ಹೇಗೆ ಉತ್ತಮಗೊಳಿಸುವುದು, ಪಾಲಿಹೌಸ್‌ಗಳನ್ನು ಹೇಗೆ ಸ್ಥಾಪಿಸುವುದು ಮತ್ತು ಗರಿಷ್ಠ ಇಳುವರಿಗಾಗಿ ದಕ್ಷ ನೀರಾವರಿ ವ್ಯವಸ್ಥೆಗಳನ್ನು ಹೇಗೆ ವಿನ್ಯಾಸಗೊಳಿಸುವುದು ಎಂಬುದನ್ನು ತಿಳಿಯಿರಿ." },
+        { title: "ನರ್ಸರಿ ವಿನ್ಯಾಸ", desc: "ಸ್ಥಳವನ್ನು ಹೇಗೆ ಉತ್ತಮಗೊಳಿಸುವುದು, ಪಾಲಿಹೌಸ್‌ಗಳನ್ನು ಹೇಗೆ ಸ್ಥಾಪಿಸುವುದು ಮತ್ತು ದಕ್ಷ ನೀರಾವರಿ ವ್ಯವಸ್ಥೆಗಳನ್ನು ಹೇಗೆ ವಿನ್ಯಾಸಗೊಳಿಸುವುದು ಎಂಬುದನ್ನು ತಿಳಿಯಿರಿ." },
         { title: "ಬೀಜ ಆಯ್ಕೆ ಮತ್ತು ಬಿತ್ತನೆ", desc: "ಉತ್ತಮ ಗುಣಮಟ್ಟದ ಬೀಜಗಳನ್ನು ಆಯ್ಕೆ ಮಾಡುವ ಕಲೆ, ಸರಿಯಾದ ಚಿಕಿತ್ಸಾ ವಿಧಾನಗಳು ಮತ್ತು ವೈಜ್ಞಾನಿಕ ಬಿತ್ತನೆ ತಂತ್ರಗಳನ್ನು ಕರಗತ ಮಾಡಿಕೊಳ್ಳಿ." },
         { title: "ಕೊಕೊಪೀಟ್ ತಯಾರಿ", desc: "ಆರೋಗ್ಯಕರ ಬೇರಿನ ಬೆಳವಣಿಗೆಗೆ ಅಗತ್ಯವಾದ ಕೊಕೊಪೀಟ್, ಎರೆಹುಳು ಗೊಬ್ಬರ ಮತ್ತು ಅಗತ್ಯ ಪೋಷಕಾಂಶಗಳ ನಿಖರವಾದ ಅನುಪಾತವನ್ನು ಅರ್ಥಮಾಡಿಕೊಳ್ಳಿ." },
         { title: "ಹವಾಮಾನ ನಿಯಂತ್ರಣ", desc: "ವಿವಿಧ ಋತುಗಳಲ್ಲಿ ಪಾಲಿಹೌಸ್ ಒಳಗೆ ತಾಪಮಾನ, ಆರ್ದ್ರತೆ ಮತ್ತು ಬೆಳಕನ್ನು ನಿರ್ವಹಿಸುವ ತಂತ್ರಗಳು." },
@@ -333,9 +373,7 @@ export const translations = {
       visionTitle: "ನಮ್ಮ ದೃಷ್ಟಿ",
       visionDesc: "ಪ್ರಾಯೋಗಿಕ, ಫಲಿತಾಂಶ-ಆಧಾರಿತ ಶಿಕ್ಷಣಕ್ಕೆ ಹೆಸರುವಾಸಿಯಾದ ಭಾರತದ ಪ್ರಮುಖ ಕೃಷಿ ತರಬೇತಿ ಸಂಸ್ಥೆಯಾಗುವುದು.",
       valuesTitle: "ನಮ್ಮ ಮೌಲ್ಯಗಳು",
-      valuesDesc: "ಸಮಗ್ರತೆ, ನಾವೀನ್ಯತೆ, ರೈತ-ಮೊದಲ ವಿಧಾನ ಮತ್ತು ನಾವು ಮಾಡುವ ಎಲ್ಲದರಲ್ಲೂ ಶ್ರೇಷ್ಠತೆಯ ಬದ್ಧತೆ.",
-      ourFounders: "ನಮ್ಮ ಸ್ಥಾಪಕರು",
-      founder: "ಸ್ಥಾಪಕ"
+      valuesDesc: "ಸಮಗ್ರತೆ, ನಾವೀನ್ಯತೆ, ರೈತ-ಮೊದಲ ವಿಧಾನ ಮತ್ತು ನಾವು ಮಾಡುವ ಎಲ್ಲದರಲ್ಲೂ ಶ್ರೇಷ್ಠತೆಯ ಬದ್ಧತೆ."
     },
     privacyPolicy: {
       title: "ಗೌಪ್ಯತೆ ನೀತಿ",
